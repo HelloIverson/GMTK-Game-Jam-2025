@@ -12,6 +12,7 @@ public class TypeScript : MonoBehaviour
     private float frontDelay;
 
     private TextMeshProUGUI text;
+    private AudioSource audioSource;
 
     private string currentMessage;
     private int currentIndex = 0;
@@ -25,6 +26,7 @@ public class TypeScript : MonoBehaviour
         timer = -frontDelay;
         currentMessage = messages[0];
         text = GetComponent<TextMeshProUGUI>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class TypeScript : MonoBehaviour
             currentCharIndex++;
             text.text = currentPrint;
             timer = 0f;
+            audioSource.Play();
         }
     }
 
