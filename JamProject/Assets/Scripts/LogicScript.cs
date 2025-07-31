@@ -46,7 +46,9 @@ public class LogicScript : MonoBehaviour
         {
             if (hit.collider.CompareTag("Agent") && hit.collider.gameObject != gameObject) //another agent?
             {
+                selectedAgent.transform.GetChild(2).gameObject.SetActive(false);
                 changeSelectedAgent(hit.collider.name);
+                selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
             }
         }
     }
