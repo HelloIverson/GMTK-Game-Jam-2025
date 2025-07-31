@@ -6,6 +6,7 @@ public class LogicScript : MonoBehaviour
     public GameObject blueAgent;
     public GameObject redAgent;
     public GameObject yellowAgent;
+    public CameraController camera;
 
     private GameObject selectedAgent;
 
@@ -68,6 +69,8 @@ public class LogicScript : MonoBehaviour
                 Debug.Log("Uh oh! Couldn't find agent called " + newName);
                 break;
         }
+
+        camera.currentPlayer = selectedAgent.transform;
 
         Debug.Log("Switched control to " + newName);
     }

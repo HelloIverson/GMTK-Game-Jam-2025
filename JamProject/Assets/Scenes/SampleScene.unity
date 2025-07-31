@@ -1607,6 +1607,7 @@ MonoBehaviour:
   blueAgent: {fileID: 1756994332}
   redAgent: {fileID: 1515812972}
   yellowAgent: {fileID: 1586341592}
+  camera: {fileID: 519420033}
 --- !u!4 &1068564807
 Transform:
   m_ObjectHideFlags: 0
