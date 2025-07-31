@@ -4,6 +4,7 @@ public class LogicScript : MonoBehaviour
 {
     public PlayerController blueAgentScript;
     public PlayerController redAgentScript;
+    public PlayerController yellowAgentScript;
 
     private string agentSelected;
 
@@ -25,6 +26,9 @@ public class LogicScript : MonoBehaviour
                     break;
                 case "red":
                     redAgentScript.updateDestination();
+                    break;
+                case "yellow":
+                    yellowAgentScript.updateDestination();
                     break;
                 default:
                     break;
