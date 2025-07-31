@@ -1530,7 +1530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1373609153
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3536,7 +3536,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1756994336}
-  target: {fileID: 1518843646}
 --- !u!212 &1756994334
 SpriteRenderer:
   m_ObjectHideFlags: 0
