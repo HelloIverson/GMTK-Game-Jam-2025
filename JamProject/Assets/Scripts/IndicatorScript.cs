@@ -7,6 +7,8 @@ public class IndicatorScript : MonoBehaviour
     public float fadeDistance;
     public SpriteRenderer spriteRenderer;
 
+    public float angleToMouse; //in degrees
+
     void Start()
     {
         parentTransform = transform.parent;
@@ -15,21 +17,28 @@ public class IndicatorScript : MonoBehaviour
 
     void Update()
     {
+        calculateAngleToMouse();
+
+        //move and rotate the cursor
+        transform.rotation = Quaternion.Euler(0f, 0f, angleToMouse * Mathf.Rad2Deg);
+        transform.localPosition = new Vector3(-Mathf.Sin(angleToMouse), Mathf.Cos(angleToMouse), 0);
+
+        //make the indicator more transparent if the mouse is too close
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         Vector2 agentToMouse = (mousePos - parentTransform.position);
         float agentToMouseMag = new Vector2(agentToMouse.x, agentToMouse.y).magnitude;
-        Vector2 agentToMouseNorm = agentToMouse.normalized;
 
-        //move and rotate the cursor
-        float angleOfRotationToMouse = Mathf.Atan2(-agentToMouse.x, agentToMouse.y);
-        transform.rotation = Quaternion.Euler(0f, 0f, angleOfRotationToMouse * Mathf.Rad2Deg);
-        transform.localPosition = new Vector3(-Mathf.Sin(angleOfRotationToMouse), Mathf.Cos(angleOfRotationToMouse), 0);
-
-        //make the indicator more transparent if the mouse is too close
         Color newColor = spriteRenderer.color;
         newColor.a = calculateAlpha(agentToMouseMag);
         spriteRenderer.color = newColor;
+    }
+
+    public void calculateAngleToMouse()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 agentToMouse = (mousePos - parentTransform.position);
+        angleToMouse = Mathf.Atan2(-agentToMouse.x, agentToMouse.y);
     }
 
     public float calculateAlpha(float distAway)
