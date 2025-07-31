@@ -6,6 +6,7 @@ public class LogicScript : MonoBehaviour
     public GameObject blueAgent;
     public GameObject redAgent;
     public GameObject yellowAgent;
+    public GameObject particleSystem;
     public CameraController camera;
 
     private GameObject selectedAgent;
@@ -49,6 +50,7 @@ public class LogicScript : MonoBehaviour
                 selectedAgent.transform.GetChild(2).gameObject.SetActive(false);
                 changeSelectedAgent(hit.collider.name);
                 selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
+                Instantiate(particleSystem, selectedAgent.transform.position, Quaternion.identity);
             }
         }
     }
