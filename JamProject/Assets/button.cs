@@ -7,6 +7,7 @@ public class button : MonoBehaviour
 
     public GameObject[] buttons;
     private GameObject selectedButton;
+    private int agentsOnButton = 0;
 
     void Start()
     {
@@ -19,14 +20,30 @@ public class button : MonoBehaviour
         //selectedButton.SetActive(true);
         selectedButton.transform.Find("button_off_0")?.gameObject.SetActive(!activated);
         selectedButton.transform.Find("button_on_0")?.gameObject.SetActive(activated);
-        if (!lever) activated = false; //resets button if theres nothing on it
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Agent")) //only agents can press the button (the button parts wont push themselves now lol)
+        if (collision.CompareTag("Agent"))
         {
+            agentsOnButton++;
             activated = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!lever) //if this isnt a lever, then it will need to turn off when all agents step off
+        {
+            if (collision.CompareTag("Agent"))
+            {
+                agentsOnButton--;
+                if (agentsOnButton <= 0) //could be == but as safety im checking <=
+                {
+                    activated = false;
+                    agentsOnButton = 0;
+                }
+            }
         }
     }
 
