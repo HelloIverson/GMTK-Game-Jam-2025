@@ -11,7 +11,6 @@ public class button : MonoBehaviour
     {
         buttons = GameObject.FindGameObjectsWithTag("Button");
         selectedButton = buttons?[0];
-        Debug.Log(selectedButton.name);
     }
 
     void Update()
