@@ -3,7 +3,6 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour
 {
-
     public Transform currentPlayer;
     public Transform[] potentialPointsOfInterest;
 
@@ -20,6 +19,16 @@ public class CameraController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //GameObject[] tempAgents = GameObject.FindGameObjectsWithTag("Agent");
+        //foreach (GameObject testAgent in tempAgents)
+        //{
+        //    if (testAgent.name == defaultNameOfStartingPlayer)
+        //    {
+        //        currentPlayer = testAgent.transform;
+        //        break;
+        //    }
+        //}
+
         //set the x and y of the camera to the current player
         if (currentPlayer != null)
         {

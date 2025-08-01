@@ -49,15 +49,15 @@ public class PlayerController : MonoBehaviour
     }
     
     [ContextMenu("test")]
-    public void setPOIs() //changing is whether you are adding POIs (true) or removing them (false)
+    public void setPOIs(int newLayer, string tagsToUpdate) //changing is whether you are adding POIs (true) or removing them (false)
     {
-        GameObject[] objectsToUpdate = GameObject.FindGameObjectsWithTag("Goal");
+        GameObject[] objectsToUpdate = GameObject.FindGameObjectsWithTag(tagsToUpdate);
 
         foreach (GameObject obj in objectsToUpdate)
         {
-            if (obj.CompareTag("Goal"))
+            if (obj.CompareTag(tagsToUpdate))
             {
-                //obj.layer = changingtrue ? 3 : 0;
+                obj.layer = newLayer;
             }
         }
     }
