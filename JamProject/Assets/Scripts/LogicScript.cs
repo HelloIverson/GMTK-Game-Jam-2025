@@ -49,10 +49,10 @@ public class LogicScript : MonoBehaviour
         {
             if (hit.collider.CompareTag("Agent") && hit.collider.gameObject != selectedAgent) //was it another agent?
             {
-                //selectedAgent.transform.GetChild(2).gameObject.SetActive(false);
+                selectedAgent.transform.GetChild(2).gameObject.SetActive(false);
                 changeSelectedAgent(hit.collider.gameObject);
-                //selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
-                //Instantiate(GetComponent<ParticleSystem>(), selectedAgent.transform.position, Quaternion.identity);
+                selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
+                Instantiate(GetComponent<ParticleSystem>(), selectedAgent.transform.position, Quaternion.identity);
             }
         } else
         {
