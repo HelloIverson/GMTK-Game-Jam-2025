@@ -14,7 +14,7 @@ public class LogicScript : MonoBehaviour
     void Start()
     {
         agents = GameObject.FindGameObjectsWithTag("Agent");
-        selectedAgent = agents?[0];
+        changeSelectedAgent(agents?[0]);
         //change this to a try catch that checks for a white agent once we make the sprite
     }
 
@@ -54,16 +54,17 @@ public class LogicScript : MonoBehaviour
                 selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
                 Instantiate(GetComponent<ParticleSystem>(), selectedAgent.transform.position, Quaternion.identity);
             }
-        } else
+        } 
+        else
         {
             Debug.Log("didn't find anything");
         }
     }
 
-    public void changeSelectedAgent(GameObject newName)
+    public void changeSelectedAgent(GameObject newObject)
     {
-        selectedAgent = newName;
-        camController.currentPlayer = newName.transform;
-        Debug.Log("Switched control to " + newName.name);
+        selectedAgent = newObject;
+        camController.currentPlayer = newObject.transform;
+        Debug.Log("Switched control to " + newObject.name);
     }
 }

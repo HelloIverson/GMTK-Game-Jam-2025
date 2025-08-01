@@ -17,13 +17,8 @@ public class button : MonoBehaviour
     void Update()
     {
         //selectedButton.SetActive(true);
-        if (activated) {
-            selectedButton.transform.Find("button_off_0")?.gameObject.SetActive(false);
-            selectedButton.transform.Find("button_on_0")?.gameObject.SetActive(true);
-        } else {
-            selectedButton.transform.Find("button_off_0")?.gameObject.SetActive(false);
-            selectedButton.transform.Find("button_on_0")?.gameObject.SetActive(true);
-        }
+        selectedButton.transform.Find("button_off_0")?.gameObject.SetActive(!activated);
+        selectedButton.transform.Find("button_on_0")?.gameObject.SetActive(activated);
         //activated = false; //resets button if theres nothing on it
     }
 
