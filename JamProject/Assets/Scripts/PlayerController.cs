@@ -21,5 +21,6 @@ public class PlayerController : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         agent.SetDestination(mousePos);
+        Debug.Log("moved");
     }
 }
