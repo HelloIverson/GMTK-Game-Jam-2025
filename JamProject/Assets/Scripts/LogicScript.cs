@@ -13,6 +13,7 @@ public class LogicScript : MonoBehaviour
     public CameraController camController;
 
     private GameObject selectedAgent;
+    public GameObject particleSystem;
 
     void Start()
     {
@@ -68,7 +69,7 @@ public class LogicScript : MonoBehaviour
                 selectedAgent.transform.GetChild(2).gameObject.SetActive(false);
                 changeSelectedAgent(hit.collider.gameObject);
                 selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
-                Instantiate(GetComponent<ParticleSystem>(), selectedAgent.transform.position, Quaternion.identity);
+                Instantiate(particleSystem, selectedAgent.transform.position, Quaternion.identity);
             }
         } 
         else
