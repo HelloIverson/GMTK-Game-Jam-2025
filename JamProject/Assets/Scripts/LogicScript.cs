@@ -26,6 +26,7 @@ public class LogicScript : MonoBehaviour
                 break;
             }
         }
+
         if (selectedAgent == null)
         {
             changeSelectedAgent(agents[0]);
