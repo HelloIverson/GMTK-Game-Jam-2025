@@ -51,7 +51,7 @@ public class LogicScript : MonoBehaviour
                 selectedAgent.transform.GetChild(2).gameObject.SetActive(false);
                 changeSelectedAgent(hit.collider.gameObject);
                 selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
-                Instantiate(particleSystem, selectedAgent.transform.position, Quaternion.identity);
+                Instantiate(GetComponent<ParticleSystem>(), selectedAgent.transform.position, Quaternion.identity);
             }
         } else
         {
