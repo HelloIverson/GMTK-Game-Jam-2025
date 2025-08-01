@@ -8,11 +8,11 @@ public class CameraController : MonoBehaviour
     public Transform[] potentialPointsOfInterest;
 
     public float minSize = 2f;
-    public float moveOffset; //for when following only the player
-    public float zoomSpeed = 15f; // Speed of zooming in and out
+    public float moveOffset = 0f; //for when following only the player
+    public float zoomSpeed = 1f; // Speed of zooming in and out
     public float smoothSpeed = 5f; // Speed of camera movement smoothing
-    public float smoothSpeedWhenZooming = 10f;
-    public float bufferWhenZoomedOut = 1.3f;
+    public float smoothSpeedWhenZooming = 1f;
+    public float bufferWhenZoomedOut = 1.05f;
 
     private Vector3 oldPlayer;
     private bool zoomingBackIn = false;
