@@ -14,6 +14,7 @@ public class LogicScript : MonoBehaviour
 
     private GameObject selectedAgent;
     public GameObject particleSystem;
+    private GameObject particles;
 
     void Start()
     {
@@ -69,7 +70,8 @@ public class LogicScript : MonoBehaviour
                 selectedAgent.transform.GetChild(2).gameObject.SetActive(false);
                 changeSelectedAgent(hit.collider.gameObject);
                 selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
-                Instantiate(particleSystem, selectedAgent.transform.position, Quaternion.identity);
+                particles = Instantiate(particleSystem, selectedAgent.transform.position, Quaternion.identity);
+                Destroy(particles, 5f);
             }
         } 
         else
