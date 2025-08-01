@@ -23,4 +23,18 @@ public class PlayerController : MonoBehaviour
         agent.SetDestination(mousePos);
         Debug.Log("moved");
     }
+    
+    [ContextMenu("test")]
+    public void setPOIs() //changing is whether you are adding POIs (true) or removing them (false)
+    {
+        GameObject[] objectsToUpdate = GameObject.FindGameObjectsWithTag("Goal");
+
+        foreach (GameObject obj in objectsToUpdate)
+        {
+            if (obj.CompareTag("Goal"))
+            {
+                //obj.layer = changingtrue ? 3 : 0;
+            }
+        }
+    }
 }
