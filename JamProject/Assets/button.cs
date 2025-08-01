@@ -15,7 +15,21 @@ public class button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //selectedButton.SetActive(true);
+        //activated=false;
+        if(activated=true) {
       selectedButton.transform.GetChild(0).gameObject.SetActive(false);
+        selectedButton.transform.GetChild(1).gameObject.SetActive(true);
+        } else {
       selectedButton.transform.GetChild(1).gameObject.SetActive(false);
+        selectedButton.transform.GetChild(0).gameObject.SetActive(true);}
+
+    }
+    void OnTriggerStay2d(Collider other) {
+     activated=true;
+    }
+
+    bool isPressed() {
+    return activated;
     }
 }
