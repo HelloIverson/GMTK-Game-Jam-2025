@@ -1,35 +1,51 @@
 // using UnityEngine;
 
-// public class button : MonoBehaviour
-// {private bool activated=false;
-//         private bool lever=false;
-//         public GameObject[] buttons;
-//         private GameObject selectedButton;
-//     // Start is called once before the first execution of Update after the MonoBehaviour is created
-//     void Start()
-//     {
-//         buttons=GameObject.FindGameObjectsWithTag("Button");
-//         selectedButton = buttons?[0];
-//     }
+public class button : MonoBehaviour
+{
+    public bool activated = false;
+    //private bool lever = false;
+    public GameObject[] buttons;
+    private GameObject selectedButton;
 
-//     // Update is called once per frame
-//     void Update()
-//     {
-//         //selectedButton.SetActive(true);
-//         //activated=false;
-//         if(activated=true) {
-//       selectedButton.transform.GetChild(0).gameObject.SetActive(false);
-//         selectedButton.transform.GetChild(1).gameObject.SetActive(true);
-//         } else {
-//       selectedButton.transform.GetChild(1).gameObject.SetActive(false);
-//         selectedButton.transform.GetChild(0).gameObject.SetActive(true);}
+    void Start()
+    {
+        buttons = GameObject.FindGameObjectsWithTag("Button");
+        selectedButton = buttons?[0];
+        Debug.Log(selectedButton.name);
+    }
 
-//     }
-//     void OnTriggerStay2d(Collider other) {
-//      activated=true;
-//     }
+    void Update()
+    {
+        //selectedButton.SetActive(true);
+        if (activated) {
+            selectedButton.transform.Find("button_off_0")?.gameObject.SetActive(false);
+            selectedButton.transform.Find("button_on_0")?.gameObject.SetActive(true);
+        } else {
+            selectedButton.transform.Find("button_off_0")?.gameObject.SetActive(false);
+            selectedButton.transform.Find("button_on_0")?.gameObject.SetActive(true);
+        }
+        //activated = false; //resets button if theres nothing on it
+    }
 
-//     bool isPressed() {
-//     return activated;
-//     }
-// }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log("something stayed!");
+        if (collision.gameObject.CompareTag("Agent")) //only agents can press the button (the button parts wont push themselves now lol)
+        {
+            activated = true;
+        }
+    }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    Debug.Log("something entered!");
+    //}
+
+    //void OnTr(Collider other) {
+    //    activated = true;
+    //}
+
+    bool isPressed() {
+        return activated;
+    }
+}
