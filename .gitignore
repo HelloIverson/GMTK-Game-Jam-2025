@@ -9,6 +9,9 @@
 **/UserSettings/
 **/Layouts/
 
+JamProject/UserSettings/EditorUserSettings.asset
+JamProject/.vs/
+
 # Unity Collaborate
 .collab/
 
@@ -54,3 +57,4 @@ desktop.ini
 # JetBrains Rider
 .idea/
 *.sln.dotSettings
+
