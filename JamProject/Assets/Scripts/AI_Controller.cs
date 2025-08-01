@@ -4,16 +4,31 @@ using UnityEngine;
 public class AI_Controller : MonoBehaviour
 {
     public float speed;
-    private Rigidbody2D rb;
+    public UnityEngine.AI.NavMeshAgent agent;
+    public int guardX;
+    public int guardY;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent <Rigidbody2D> ();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.eulerAngles = Vector3.forward * UnityEngine.Random.Range(-20, 20);
+        agent.SetDestination(new Vector3(guardX, guardY));
     }
+
+    public void guardMovement()
+    {
+        agent.SetDestination(new Vector3(guardX, guardY));
+    }
+
+    public void hearSound()
+    {
+
+    }
+
+
 }
