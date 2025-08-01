@@ -46,12 +46,16 @@ public class TypeScript : MonoBehaviour
             currentCharIndex++;
             text.text = currentPrint;
             timer = 0f;
-            audioSource.Play();
+            if (audioSource != null) {
+                audioSource.Play();
+            }
+            
         }
     }
 
     public void nextMessage() {
         currentIndex++;
+        currentCharIndex = 0;
         currentMessage = messages[currentIndex];
         currentPrint = "";
 
