@@ -4,6 +4,9 @@ public class LogicScript : MonoBehaviour
 {
     //better raycasting
     // for some reason can only find the character if hovered?
+    // make it an array to loop thru
+
+    public string defaultNameOfStartingPlayer;
 
     public float maxSwapDistance = 4f; // the maximum range you can switch characters
     public GameObject[] agents;
@@ -13,9 +16,22 @@ public class LogicScript : MonoBehaviour
 
     void Start()
     {
+
         agents = GameObject.FindGameObjectsWithTag("Agent");
-        selectedAgent = agents?[0];
-        //change this to a try catch that checks for a white agent once we make the sprite
+        foreach (GameObject testAgent in agents)
+        {
+            if (testAgent.name == defaultNameOfStartingPlayer)
+            {
+                changeSelectedAgent(testAgent);
+                break;
+            }
+        }
+
+        if (selectedAgent == null)
+        {
+            changeSelectedAgent(agents[0]);
+            Debug.Log("Couldn't find agent named " + defaultNameOfStartingPlayer);
+        }
     }
 
     void Update()
@@ -54,16 +70,17 @@ public class LogicScript : MonoBehaviour
                 selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
                 Instantiate(GetComponent<ParticleSystem>(), selectedAgent.transform.position, Quaternion.identity);
             }
-        } else
+        } 
+        else
         {
             Debug.Log("didn't find anything");
         }
     }
 
-    public void changeSelectedAgent(GameObject newName)
+    public void changeSelectedAgent(GameObject newObject)
     {
-        selectedAgent = newName;
-        camController.currentPlayer = newName.transform;
-        Debug.Log("Switched control to " + newName.name);
+        selectedAgent = newObject;
+        camController.currentPlayer = newObject.transform;
+        Debug.Log("Switched control to " + newObject.name);
     }
 }
