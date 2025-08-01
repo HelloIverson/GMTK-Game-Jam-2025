@@ -58,9 +58,10 @@ public class LogicScript : MonoBehaviour
     public void raycastForNewAgent()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 agentToMouse = (mousePos - transform.position).normalized;
+        Vector3 agentToMouse = (mousePos - selectedAgent.transform.position).normalized;
+        agentToMouse.z = 0;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, agentToMouse, maxSwapDistance);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(selectedAgent.transform.position, agentToMouse, maxSwapDistance);
 
         if (hit.collider != null) //did it hit something?
         {
