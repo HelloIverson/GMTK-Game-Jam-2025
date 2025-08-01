@@ -5,17 +5,27 @@ public class SceneManager : MonoBehaviour
 
     [SerializeField]
     private string nextScene;
+    [SerializeField]
+    private GameObject audio;
+    [SerializeField]
+    private float fadetime;
+    [SerializeField]
+    private GameObject blackScreen;
+
+    private bool fadeOut;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        fadeOut = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (fadeOut) {
+            
+        }
     }
 
     public void LoadNextScene()
@@ -23,7 +33,7 @@ public class SceneManager : MonoBehaviour
         Debug.Log("Loading next scene: " + nextScene);
         if (nextScene != null)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
+            LoadScene(nextScene);
         }
         else
         {
