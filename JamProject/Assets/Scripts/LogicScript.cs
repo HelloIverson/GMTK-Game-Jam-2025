@@ -2,16 +2,19 @@ using UnityEngine;
 
 public class LogicScript : MonoBehaviour
 {
+    //better raycasting
+    // for some reason can only find the character if hovered?
+
     public float maxSwapDistance = 4f; // the maximum range you can switch characters
-    public GameObject blueAgent;
-    public GameObject redAgent;
-    public GameObject yellowAgent;
+    public GameObject[] agents;
 
     private GameObject selectedAgent;
 
     void Start()
     {
-        selectedAgent = blueAgent;
+        agents = GameObject.FindGameObjectsWithTag("Agent");
+        selectedAgent = agents?[0];
+        //change this to a try catch that checks for a white agent once we make the sprite
     }
 
     void Update()
@@ -43,32 +46,22 @@ public class LogicScript : MonoBehaviour
 
         if (hit.collider != null) //did it hit something?
         {
-            if (hit.collider.CompareTag("Agent") && hit.collider.gameObject != gameObject) //another agent?
+            if (hit.collider.CompareTag("Agent") && hit.collider.gameObject != selectedAgent) //was it another agent?
             {
-                changeSelectedAgent(hit.collider.name);
+                changeSelectedAgent(hit.collider.gameObject);
+            } else
+            {
+                Debug.Log("hit " + hit.collider.name);
             }
+        } else
+        {
+            Debug.Log("didn't find anything");
         }
     }
 
-    //Beware, this function is case sensitive and needs the exact name of the GameObject!
-    public void changeSelectedAgent(string newName)
+    public void changeSelectedAgent(GameObject newName)
     {
-        switch (newName)
-        {
-            case "Blue Agent":
-                selectedAgent = blueAgent;
-                break;
-            case "Red Agent":
-                selectedAgent = redAgent;
-                break;
-            case "Yellow Agent":
-                selectedAgent = yellowAgent;
-                break;
-            default:
-                Debug.Log("Uh oh! Couldn't find agent called " + newName);
-                break;
-        }
-
-        Debug.Log("Switched control to " + newName);
+        selectedAgent = newName;
+        Debug.Log("Switched control to " + newName.name);
     }
 }
