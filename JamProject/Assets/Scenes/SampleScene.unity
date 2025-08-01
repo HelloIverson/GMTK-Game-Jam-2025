@@ -206,30 +206,13 @@ SpriteMask:
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
   m_MaskSource: 0
---- !u!1 &412773078
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 193957838}
-  - component: {fileID: 193957839}
-  m_Layer: 0
-  m_Name: Highlight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!4 &193957838
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193957837}
+  m_GameObject: {fileID: 412773078}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.003, y: -0.003, z: 0}
@@ -244,7 +227,7 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193957837}
+  m_GameObject: {fileID: 412773078}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -305,29 +288,42 @@ GameObject:
   m_Layer: 0
   m_Name: gate&button
   m_TagString: Button
-  - component: {fileID: 412773079}
-  m_Layer: 0
-  m_Name: dummy rescue
-  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &412773079
+--- !u!4 &402614233
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412773078}
+  m_GameObject: {fileID: 402614232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.43, y: -4.61, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &412773078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 193957838}
+  - component: {fileID: 193957839}
+  m_Layer: 0
+  m_Name: Highlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +456,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.69, y: -0.96, z: -10}
+  m_LocalPosition: {x: -16.22, y: -0.96, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -479,11 +475,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPlayer: {fileID: 1756994335}
-  potentialPointsOfInterest: []
+  potentialPointsOfInterest:
+  - {fileID: 1586341596}
   minSize: 3
   moveOffset: 0
-  zoomSpeed: 5
+  zoomSpeed: 1
   smoothSpeed: 5
+  smoothSpeedWhenZooming: 1
+  bufferWhenZoomedOut: 1.05
 --- !u!1 &525273316
 GameObject:
   m_ObjectHideFlags: 0
@@ -2249,7 +2248,7 @@ Transform:
   m_Children:
   - {fileID: 525273317}
   - {fileID: 1705684864}
-  m_Father: {fileID: 402614233}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1520940238
 MonoBehaviour:
@@ -4370,7 +4369,7 @@ Transform:
   m_GameObject: {fileID: 1586341592}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 1.1, z: 0}
+  m_LocalPosition: {x: 10.55, y: 2.48, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5152,6 +5151,7 @@ SpriteMask:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 402614233}
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1756994335}
@@ -5160,5 +5160,5 @@ SceneRoots:
   - {fileID: 1148729121}
   - {fileID: 853590914}
   - {fileID: 1373609154}
-  - {fileID: 402614233}
   - {fileID: 1068564807}
+  - {fileID: 1520940237}
