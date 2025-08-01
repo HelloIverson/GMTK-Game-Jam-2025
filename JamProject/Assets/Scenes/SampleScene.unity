@@ -2063,8 +2063,8 @@ GameObject:
   - component: {fileID: 1515812975}
   - component: {fileID: 1515812974}
   - component: {fileID: 1515812973}
-  - component: {fileID: 1515812977}
   - component: {fileID: 1515812978}
+  - component: {fileID: 1515812979}
   m_Layer: 0
   m_Name: Red Agent
   m_TagString: Agent
@@ -2250,7 +2250,6 @@ PolygonCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.21133333}
   m_Radius: 0.44
---- !u!82 &1515812978
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
