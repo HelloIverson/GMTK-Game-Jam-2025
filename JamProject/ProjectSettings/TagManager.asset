@@ -5,12 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Agent
-  - PointOfInterest
+  - Goal
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Point of Interest
   - Water
   - UI
   - 

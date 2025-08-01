@@ -6,10 +6,10 @@ public class CameraController : MonoBehaviour
     public Transform currentPlayer;
     public Transform[] potentialPointsOfInterest;
 
-    public float minSize;
+    public float minSize = 2f;
     public float moveOffset; //for when following only the player
     public float zoomSpeed = 15f; // Speed of zooming in and out
-    public float smoothSpeed = 0.125f; // Speed of camera movement smoothing
+    public float smoothSpeed = 5f; // Speed of camera movement smoothing
 
     private Vector3 oldPlayer;
 
@@ -34,8 +34,8 @@ public class CameraController : MonoBehaviour
         bool onlyPlayer = true;
         for(int i = 0; i < potentialPointsOfInterest.Length; i++)
         {
-            //if potential point of interest has tag "PointOfInterest"
-            if (potentialPointsOfInterest[i].CompareTag("PointOfInterest"))
+            //if potential point of interest is layer "Point of Interest"
+            if (potentialPointsOfInterest[i].gameObject.layer == 3)
             {
                 Debug.Log("Found a point of interest: " + potentialPointsOfInterest[i].name);
                 onlyPlayer = false;
