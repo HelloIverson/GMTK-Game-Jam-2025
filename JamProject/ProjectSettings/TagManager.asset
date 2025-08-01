@@ -7,11 +7,12 @@ TagManager:
   - Agent
   - PointOfInterest
   - Button
+  - Goal
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Point of Interest
   - Water
   - UI
   - 

@@ -7,6 +7,7 @@ public class LogicScript : MonoBehaviour
 
     public float maxSwapDistance = 4f; // the maximum range you can switch characters
     public GameObject[] agents;
+    public CameraController camController;
 
     private GameObject selectedAgent;
 
@@ -48,10 +49,10 @@ public class LogicScript : MonoBehaviour
         {
             if (hit.collider.CompareTag("Agent") && hit.collider.gameObject != selectedAgent) //was it another agent?
             {
-                selectedAgent.transform.GetChild(2).gameObject.SetActive(false);
+                //selectedAgent.transform.GetChild(2).gameObject.SetActive(false);
                 changeSelectedAgent(hit.collider.gameObject);
-                selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
-                Instantiate(GetComponent<ParticleSystem>(), selectedAgent.transform.position, Quaternion.identity);
+                //selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
+                //Instantiate(GetComponent<ParticleSystem>(), selectedAgent.transform.position, Quaternion.identity);
             }
         } else
         {
@@ -62,6 +63,7 @@ public class LogicScript : MonoBehaviour
     public void changeSelectedAgent(GameObject newName)
     {
         selectedAgent = newName;
+        camController.currentPlayer = newName.transform;
         Debug.Log("Switched control to " + newName.name);
     }
 }

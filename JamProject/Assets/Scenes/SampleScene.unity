@@ -206,7 +206,7 @@ SpriteMask:
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
   m_MaskSource: 0
---- !u!1 &193957837
+--- !u!1 &412773078
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -305,24 +305,27 @@ GameObject:
   m_Layer: 0
   m_Name: gate&button
   m_TagString: Button
+  - component: {fileID: 412773079}
+  m_Layer: 0
+  m_Name: dummy rescue
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &402614233
+--- !u!4 &412773079
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 402614232}
+  m_GameObject: {fileID: 412773078}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4384, y: -0.56789, z: 0}
+  m_LocalPosition: {x: 11.43, y: -4.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1520940237}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
@@ -337,6 +340,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1897,6 +1901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSwapDistance: 4
   agents: []
+  camController: {fileID: 519420033}
 --- !u!4 &1068564807
 Transform:
   m_ObjectHideFlags: 0
