@@ -24,6 +24,7 @@ public class AI_Controller : MonoBehaviour
             // Move to the next waypoint
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length; // Cycle through waypoints
             agent.destination = waypoints[currentWaypointIndex].position;
+            Debug.Log("updated");
         }
     }
 
