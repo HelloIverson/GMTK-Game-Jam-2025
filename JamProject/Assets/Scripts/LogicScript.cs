@@ -18,14 +18,14 @@ public class LogicScript : MonoBehaviour
     private GameObject particles;
     private List<GameObject> loopers = new(); // all the gameObjects of agents in the loop
 
-
-    public GameObject particleSystem; //why is this here?
+    public GameObject particleSystem;
 
 
     void Start()
     {
 
         agents = GameObject.FindGameObjectsWithTag("Agent");
+        bool foundAgent = false;
         foreach (GameObject testAgent in agents)
         {
             if (testAgent.name == defaultNameOfStartingPlayer)
@@ -33,15 +33,18 @@ public class LogicScript : MonoBehaviour
                 changeSelectedAgent(testAgent);
                 setLoopPrefs(testAgent, true);
                 loopers.Add(testAgent);
+                foundAgent = true;
                 break;
             }
         }
-
-        if (selectedAgent == null)
+        if (!foundAgent)
         {
+            Debug.Log("Couldn't find " + defaultNameOfStartingPlayer + ". Using first agent found, named " + agents[0]);
             changeSelectedAgent(agents[0]);
-            Debug.Log("Couldn't find agent named " + defaultNameOfStartingPlayer);
+            setLoopPrefs(agents[0], true);
+            loopers.Add(agents[0]);
         }
+        Debug.Log("Completed");
     }
 
     void Update()

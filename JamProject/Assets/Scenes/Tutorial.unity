@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 539646857}
   m_Layer: 0
   m_Name: TutorialGoal
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -581,6 +581,10 @@ PrefabInstance:
       propertyPath: 'agents.Array.data[0]'
       value: 
       objectReference: {fileID: 1293166489}
+    - target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
+      propertyPath: defaultNameOfStartingPlayer
+      value: Red Agent
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -855,8 +859,8 @@ GameObject:
   - component: {fileID: 1293166493}
   - component: {fileID: 1293166494}
   m_Layer: 0
-  m_Name: Red
-  m_TagString: Untagged
+  m_Name: Red Agent
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -874,6 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1293166493}
+  guardSightRange: 10
   footstepSounds: []
   stepTime: 0.2
 --- !u!212 &1293166491
