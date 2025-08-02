@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class LogicScript : MonoBehaviour
 {
@@ -13,8 +15,12 @@ public class LogicScript : MonoBehaviour
     public CameraController camController;
 
     private GameObject selectedAgent;
-    public GameObject particleSystem;
     private GameObject particles;
+    private List<GameObject> loopers = new(); // all the gameObjects of agents in the loop
+
+
+    public GameObject particleSystem; //why is this here?
+
 
     void Start()
     {
@@ -25,6 +31,8 @@ public class LogicScript : MonoBehaviour
             if (testAgent.name == defaultNameOfStartingPlayer)
             {
                 changeSelectedAgent(testAgent);
+                setLoopPrefs(testAgent, true);
+                loopers.Add(testAgent);
                 break;
             }
         }
@@ -38,30 +46,75 @@ public class LogicScript : MonoBehaviour
 
     void Update()
     {
+        // movement
         if (Input.GetMouseButtonDown(0)) // left mouse button pressed
         {
             PlayerController selectedScript = selectedAgent.GetComponent<PlayerController>();
             selectedScript.updateDestination();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) // spacebar pressed
+        // indicator on
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.X)) // z key or x key pressed
         {
             selectedAgent.transform.Find("Indicator").gameObject.SetActive(true);
         }
 
-        if (Input.GetKeyUp(KeyCode.Space)) // spacebar released
+        // addtoloop
+        if (Input.GetKeyUp(KeyCode.X) && !Input.GetKey(KeyCode.Z)) // x key released (and z not already pressed)
         {
             selectedAgent.transform.Find("Indicator").gameObject.SetActive(false);
-            GameObject newAgent = raycastForAgent();
-            if (newAgent)
+            GameObject raycastedAgent = raycastForAgent();
+            if (raycastedAgent)
             {
-                if (Input.GetKey(KeyCode.Z)) // z key held
+                if (outsideLoopCheck(raycastedAgent))
                 {
-
+                    loopers.Add(raycastedAgent);
+                    setLoopPrefs(raycastedAgent, true);
                 }
-                changeSelectedAgent(newAgent);
             }
         }
+
+        // switch
+        if (Input.GetKeyUp(KeyCode.Z) && !Input.GetKey(KeyCode.X)) // z key released (and x not already pressed)
+        {
+            selectedAgent.transform.Find("Indicator").gameObject.SetActive(false);
+            GameObject raycastedAgent = raycastForAgent();
+            if (raycastedAgent)
+            {
+                if (outsideLoopCheck(raycastedAgent))
+                {
+                    //we're switching outside the loop, so we need to clear whats left there
+                    foreach (GameObject agentInLoop in loopers)
+                    {
+                        setLoopPrefs(agentInLoop, false);
+                    }
+                    loopers = new List<GameObject>();
+
+                    //and now actually switch selectedAgent
+                    changeSelectedAgent(raycastedAgent);
+                    loopers.Add(raycastedAgent);
+                    setLoopPrefs(raycastedAgent, true);
+                }
+            }
+        }
+
+        // clear loop
+        if (Input.GetKeyDown(KeyCode.C)) // c key released
+        {
+            foreach (GameObject agentInLoop in loopers)
+            {
+                if (agentInLoop != selectedAgent)
+                {
+                    setLoopPrefs(agentInLoop, false);
+                }
+            }
+            loopers = new List<GameObject>();
+            loopers.Add(selectedAgent);
+        }
+
+
+
+        if (loopers.Count == 0) Debug.LogError("FUCK");
     }
 
     public GameObject raycastForAgent()
@@ -92,10 +145,6 @@ public class LogicScript : MonoBehaviour
 
     public void changeSelectedAgent(GameObject newObject)
     {
-            //in-loop settings (POI and highlight)
-        if (selectedAgent) setLoopPrefs(selectedAgent, false); //turn off for old agent
-        setLoopPrefs(newObject, true);                         //turn on for new agent
-
             //selectedagent
         selectedAgent = newObject;
 
@@ -137,5 +186,14 @@ public class LogicScript : MonoBehaviour
     {
         agentToUpdate.transform.GetChild(2).gameObject.SetActive(toggleOn);
         updatePointsOfInterest(toggleOn, agentToUpdate);
+    }
+
+    public bool outsideLoopCheck(GameObject agentToCheck)
+    {
+        foreach(GameObject agentInLoop in loopers)
+        {
+            if (agentToCheck.name == agentInLoop.name) return false; //found inside loop
+        }
+        return true;
     }
 }
