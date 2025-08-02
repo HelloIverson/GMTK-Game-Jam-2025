@@ -117,7 +117,7 @@ public class LogicScript : MonoBehaviour
 
 
 
-        if (loopers.Count == 0) Debug.LogError("FUCK");
+        if (loopers.Count == 0) Debug.LogError("OH NO SOMETHING IS VERY WRONG");
     }
 
     public GameObject raycastForAgent()
