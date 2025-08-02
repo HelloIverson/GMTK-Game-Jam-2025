@@ -34,6 +34,7 @@ public class SceneExecutive : MonoBehaviour
         {
             fadeIn = true;
             blackScreen.color = new Color(0f, 0f, 0f, 1f); // Start with black screen
+            blackScreen.gameObject.SetActive(true); // Ensure black screen is active
         }
         else {
             fadeIn = false;
@@ -71,9 +72,7 @@ public class SceneExecutive : MonoBehaviour
         Debug.Log("Loading next scene: " + nextScene);
         if (nextScene != null)
         {
-            fadeOutScene = nextScene;
-            fadeOut = true;
-            blackScreen.gameObject.SetActive(true); // Ensure black screen is active during fade out
+            LoadScene(nextScene);
         }
         else
         {
@@ -96,6 +95,42 @@ public class SceneExecutive : MonoBehaviour
     public void LoadScene(string sceneName) {
         fadeOutScene = sceneName;
         fadeOut = true;
+        blackScreen.gameObject.SetActive(true); // Ensure black screen is active during fade out
+    }
+
+    public void ToMenusMusic()
+    {
+        audioManager.GetComponent<AudioManager>().ToMenusMusic();
+    }
+
+    public void ToSuspenseMusic()
+    {
+        audioManager.GetComponent<AudioManager>().ToSuspenseMusic();
+    }
+
+    public void FadeToSuspenseMusic()
+    {
+        audioManager.GetComponent<AudioManager>().FadeToSuspenseMusic();
+    }
+
+    public void FadeToChaseMusic()
+    {
+        audioManager.GetComponent<AudioManager>().FadeToChaseMusic();
+    }
+
+    public void ChangeMasterVolume(float volume)
+    {
+        audioManager.GetComponent<AudioManager>().ChangeMasterVolume(volume);
+    }
+
+    public void ChangeMusicVolume(float volume)
+    {
+        audioManager.GetComponent<AudioManager>().ChangeMusicVolume(volume);
+    }
+
+    public void ChangeSFXVolume(float volume)
+    {
+        audioManager.GetComponent<AudioManager>().ChangeSFXVolume(volume);
     }
 
     private void GoToScene(string sceneName)
