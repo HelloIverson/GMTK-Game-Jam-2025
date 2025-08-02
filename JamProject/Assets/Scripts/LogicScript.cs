@@ -61,7 +61,7 @@ public class LogicScript : MonoBehaviour
         if (!inUI)
         {
             // movement
-            if (Input.GetMouseButtonDown(0)) // left mouse button pressed
+            if (Input.GetMouseButtonUp(0)) // left mouse button pressed
             {
                 foreach (GameObject agentInLoop in loopers)
                 {
