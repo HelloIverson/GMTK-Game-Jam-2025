@@ -2705,7 +2705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1177073282
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2749,7 +2749,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5799,7 +5799,7 @@ GameObject:
   - component: {fileID: 1569516140}
   - component: {fileID: 1569516144}
   m_Layer: 0
-  m_Name: Guard
+  m_Name: Guard2
   m_TagString: Guard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5819,7 +5819,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -5842,7 +5842,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1177073283}
   - {fileID: 1672093835}
-  agent: {fileID: 1688880366}
+  agent: {fileID: 1569516140}
 --- !u!212 &1569516142
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5886,7 +5886,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -6287,7 +6287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1672093834
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6331,7 +6331,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6372,12 +6372,12 @@ GameObject:
   - component: {fileID: 1688880367}
   - component: {fileID: 1688880366}
   m_Layer: 0
-  m_Name: Guard
-  m_TagString: Untagged
+  m_Name: Guard1
+  m_TagString: Guard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1688880363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6390,8 +6390,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1464761eb3220d040a0b4c268e652268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
-  agent: {fileID: 0}
+  waypoints:
+  - {fileID: 1177073283}
+  - {fileID: 1672093835}
+  agent: {fileID: 1688880366}
 --- !u!212 &1688880364
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6435,7 +6437,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -6476,7 +6478,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
