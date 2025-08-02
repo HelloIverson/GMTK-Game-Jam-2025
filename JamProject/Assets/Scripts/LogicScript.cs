@@ -8,6 +8,13 @@ public class LogicScript : MonoBehaviour
     // for some reason can only find the character if hovered?
     // make it an array to loop thru
 
+    [SerializeField]
+    private AudioClip swapSound;
+    [SerializeField]
+    private AudioClip groupSound;
+    [SerializeField]
+    private AudioClip ungroupSound;
+
     public string defaultNameOfStartingPlayer;
 
     public float maxSwapDistance = 4f; // the maximum range you can switch characters
@@ -17,6 +24,7 @@ public class LogicScript : MonoBehaviour
     private GameObject selectedAgent;
     private GameObject particles;
     private List<GameObject> loopers = new(); // all the gameObjects of agents in the loop
+    private AudioSource audioSource;
 
     public GameObject particleSystem;
 
@@ -44,7 +52,8 @@ public class LogicScript : MonoBehaviour
             setLoopPrefs(agents[0], true);
             loopers.Add(agents[0]);
         }
-        Debug.Log("Completed");
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -76,6 +85,7 @@ public class LogicScript : MonoBehaviour
                 {
                     loopers.Add(raycastedAgent);
                     setLoopPrefs(raycastedAgent, true);
+                    audioSource.PlayOneShot(groupSound);
                 }
             }
         }
@@ -101,6 +111,7 @@ public class LogicScript : MonoBehaviour
                     setLoopPrefs(raycastedAgent, true);
                 }
                 changeSelectedAgent(raycastedAgent);
+                audioSource.PlayOneShot(swapSound);
             }
         }
 
@@ -116,6 +127,7 @@ public class LogicScript : MonoBehaviour
             }
             loopers = new List<GameObject>();
             loopers.Add(selectedAgent);
+            audioSource.PlayOneShot(ungroupSound);
         }
 
 
