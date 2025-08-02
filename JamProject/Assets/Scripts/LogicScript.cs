@@ -14,6 +14,7 @@ public class LogicScript : MonoBehaviour
 
     private GameObject selectedAgent;
     public GameObject particleSystem;
+    private GameObject particles;
 
     void Start()
     {
@@ -63,20 +64,26 @@ public class LogicScript : MonoBehaviour
 
         RaycastHit2D[] hits = Physics2D.RaycastAll(selectedAgent.transform.position, agentToMouse, maxSwapDistance);
 
-        if (hit.collider != null) //did it hit something?
+        if (hits.Length == 0)
         {
-            if (hit.collider.CompareTag("Agent") && hit.collider.gameObject != selectedAgent) //was it another agent?
+            Debug.Log("didn't find anything");
+            return;
+        }
+
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.collider != null && hit.collider.CompareTag("Agent") && hit.collider.gameObject != selectedAgent)
             {
                 selectedAgent.transform.GetChild(2).gameObject.SetActive(false);
                 changeSelectedAgent(hit.collider.gameObject);
                 selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
-                Instantiate(particleSystem, selectedAgent.transform.position, Quaternion.identity);
+                particles = Instantiate(particleSystem, selectedAgent.transform.position, Quaternion.identity);
+                Destroy(particles, 5f);
+                return; // stop after the first valid agent
             }
-        } 
-        else
-        {
-            Debug.Log("didn't find anything");
         }
+
+        Debug.Log("no other agents found in raycast hits");
     }
 
     public void changeSelectedAgent(GameObject newObject)
