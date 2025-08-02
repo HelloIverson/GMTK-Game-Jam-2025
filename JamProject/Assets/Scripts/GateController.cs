@@ -4,9 +4,18 @@ using UnityEngine.AI;
 public class GateController : MonoBehaviour
 {
     public bool activated;
+    public bool isHorizontal;
 
     void Start()
     {
+       
+             transform.Find("gate_horizontal_on_0").gameObject.SetActive(false);
+        transform.Find("gate_horizontal_off_0").gameObject.SetActive(false); 
+        transform.Find("gate_color_horizontal_0").gameObject.SetActive(false);
+       
+            transform.Find("gate_vertical_on_0").gameObject.SetActive(false);
+        transform.Find("gate_vertical_off_0").gameObject.SetActive(false); 
+        transform.Find("gate_color_vertical_0").gameObject.SetActive(false); 
         
     }
 
@@ -28,16 +37,31 @@ public class GateController : MonoBehaviour
     public void activate()
     {
         activated = true;
-        transform.Find("gate_on_0").gameObject.SetActive(true);
-        transform.Find("gate_off_0").gameObject.SetActive(false);
+        if(isHorizontal) {
+        transform.Find("gate_horizontal_on_0").gameObject.SetActive(true);
+        transform.Find("gate_horizontal_off_0").gameObject.SetActive(false); 
+        transform.Find("gate_color_horizontal_0").gameObject.SetActive(false); 
+        } else {
+        transform.Find("gate_vertical_on_0").gameObject.SetActive(true);
+        transform.Find("gate_vertical_off_0").gameObject.SetActive(false); 
+        transform.Find("gate_color_vertical_0").gameObject.SetActive(false); 
+        }
+
         transform.Find("Blocker").gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     public void deactivate()
     {
         activated = false;
-        transform.Find("gate_on_0").gameObject.SetActive(false);
-        transform.Find("gate_off_0").gameObject.SetActive(true);
+        if(isHorizontal) {
+        transform.Find("gate_horizontal_on_0").gameObject.SetActive(false);
+        transform.Find("gate_horizontal_off_0").gameObject.SetActive(true); 
+        transform.Find("gate_color_horizontal_0").gameObject.SetActive(true); 
+        } else {
+        transform.Find("gate_vertical_on_0").gameObject.SetActive(false);
+        transform.Find("gate_vertical_off_0").gameObject.SetActive(true); 
+        transform.Find("gate_color_vertical_0").gameObject.SetActive(true); 
+        }
         transform.Find("Blocker").gameObject.GetComponent<BoxCollider2D>().enabled = true;
     }
 }
