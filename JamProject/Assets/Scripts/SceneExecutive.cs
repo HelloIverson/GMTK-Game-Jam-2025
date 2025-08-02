@@ -81,6 +81,18 @@ public class SceneExecutive : MonoBehaviour
         }
     }
 
+    public void restart() {
+        LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void stopTime() {
+        Time.timeScale = 0f;
+    }
+
+    public void resumeTime() {
+        Time.timeScale = 1f;
+    }
+
     public void LoadScene(string sceneName) {
         fadeOutScene = sceneName;
         fadeOut = true;
