@@ -44,7 +44,7 @@ public class CameraController : MonoBehaviour
             //if potential point of interest is layer "Point of Interest"
             if (potentialPointsOfInterest[i].gameObject.layer == 3)
             {
-                Debug.Log("Found a point of interest: " + potentialPointsOfInterest[i].name);
+                //Debug.Log("Found a point of interest: " + potentialPointsOfInterest[i].name);
                 onlyPlayer = false;
                 POIX.Add(potentialPointsOfInterest[i].position.x);
                 POIY.Add(potentialPointsOfInterest[i].position.y);
