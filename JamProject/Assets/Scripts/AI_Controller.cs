@@ -28,4 +28,9 @@ public class AI_Controller : MonoBehaviour
         }
     }
 
+    public void handleNoise(Vector3 source, float strength)
+    {
+
+    }
+
 }
