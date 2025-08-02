@@ -62,7 +62,7 @@ public class LogicScript : MonoBehaviour
             selectedAgent.transform.Find("Indicator").gameObject.SetActive(true);
         }
 
-        // addtoloop
+        // talk
         if (Input.GetKeyUp(KeyCode.X) && !Input.GetKey(KeyCode.Z)) // x key released (and z not already pressed)
         {
             selectedAgent.transform.Find("Indicator").gameObject.SetActive(false);
@@ -101,7 +101,7 @@ public class LogicScript : MonoBehaviour
             }
         }
 
-        // clear loop
+        // clear
         if (Input.GetKeyDown(KeyCode.C)) // c key released
         {
             foreach (GameObject agentInLoop in loopers)
