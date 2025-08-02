@@ -51,6 +51,7 @@ public class SceneExecutive : MonoBehaviour
             if (color.a <= 0f)
             {
                 fadeIn = false;
+                blackScreen.gameObject.SetActive(false); // Disable black screen after fade in
             }
         }
 
@@ -72,6 +73,7 @@ public class SceneExecutive : MonoBehaviour
         {
             fadeOutScene = nextScene;
             fadeOut = true;
+            blackScreen.gameObject.SetActive(true); // Ensure black screen is active during fade out
         }
         else
         {
