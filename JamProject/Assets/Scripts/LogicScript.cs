@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class LogicScript : MonoBehaviour
 {
@@ -13,8 +15,12 @@ public class LogicScript : MonoBehaviour
     public CameraController camController;
 
     private GameObject selectedAgent;
-    public GameObject particleSystem;
     private GameObject particles;
+    private List<GameObject> loopers = new(); // all the gameObjects of agents in the loop
+
+
+    public GameObject particleSystem; //why is this here?
+
 
     void Start()
     {
@@ -25,6 +31,8 @@ public class LogicScript : MonoBehaviour
             if (testAgent.name == defaultNameOfStartingPlayer)
             {
                 changeSelectedAgent(testAgent);
+                setLoopPrefs(testAgent, true);
+                loopers.Add(testAgent);
                 break;
             }
         }
@@ -38,25 +46,81 @@ public class LogicScript : MonoBehaviour
 
     void Update()
     {
+        // movement
         if (Input.GetMouseButtonDown(0)) // left mouse button pressed
         {
-            PlayerController selectedScript = selectedAgent.GetComponent<PlayerController>();
-            selectedScript.updateDestination();
+            foreach(GameObject agentInLoop in loopers)
+            {
+                PlayerController selectedScript = agentInLoop.GetComponent<PlayerController>();
+                selectedScript.updateDestination();
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) // spacebar pressed
+        // indicator on
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.X)) // z key or x key pressed
         {
             selectedAgent.transform.Find("Indicator").gameObject.SetActive(true);
         }
 
-        if (Input.GetKeyUp(KeyCode.Space)) // spacebar released
+        // talk
+        if (Input.GetKeyUp(KeyCode.X) && !Input.GetKey(KeyCode.Z)) // x key released (and z not already pressed)
         {
             selectedAgent.transform.Find("Indicator").gameObject.SetActive(false);
-            raycastForNewAgent();
+            GameObject raycastedAgent = raycastForAgent();
+            if (raycastedAgent)
+            {
+                if (outsideLoopCheck(raycastedAgent))
+                {
+                    loopers.Add(raycastedAgent);
+                    setLoopPrefs(raycastedAgent, true);
+                }
+            }
         }
+
+        // switch
+        if (Input.GetKeyUp(KeyCode.Z) && !Input.GetKey(KeyCode.X)) // z key released (and x not already pressed)
+        {
+            selectedAgent.transform.Find("Indicator").gameObject.SetActive(false);
+            GameObject raycastedAgent = raycastForAgent();
+            if (raycastedAgent)
+            {
+                if (outsideLoopCheck(raycastedAgent))
+                {
+                    //we're switching outside the loop, so we need to clear whats left there
+                    foreach (GameObject agentInLoop in loopers)
+                    {
+                        setLoopPrefs(agentInLoop, false);
+                    }
+                    loopers = new List<GameObject>();
+
+                    //and now actually switch selectedAgent
+                    loopers.Add(raycastedAgent);
+                    setLoopPrefs(raycastedAgent, true);
+                }
+                changeSelectedAgent(raycastedAgent);
+            }
+        }
+
+        // clear
+        if (Input.GetKeyDown(KeyCode.C)) // c key released
+        {
+            foreach (GameObject agentInLoop in loopers)
+            {
+                if (agentInLoop != selectedAgent)
+                {
+                    setLoopPrefs(agentInLoop, false);
+                }
+            }
+            loopers = new List<GameObject>();
+            loopers.Add(selectedAgent);
+        }
+
+
+
+        if (loopers.Count == 0) Debug.LogError("OH NO SOMETHING IS VERY WRONG");
     }
 
-    public void raycastForNewAgent()
+    public GameObject raycastForAgent()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 agentToMouse = (mousePos - selectedAgent.transform.position).normalized;
@@ -67,31 +131,34 @@ public class LogicScript : MonoBehaviour
         if (hits.Length == 0)
         {
             Debug.Log("didn't find anything");
-            return;
+            return null;
         }
 
         foreach (RaycastHit2D hit in hits)
         {
             if (hit.collider != null && hit.collider.CompareTag("Agent") && hit.collider.gameObject != selectedAgent)
             {
-                selectedAgent.transform.GetChild(2).gameObject.SetActive(false);
-                changeSelectedAgent(hit.collider.gameObject);
-                selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
-                particles = Instantiate(particleSystem, selectedAgent.transform.position, Quaternion.identity);
-                Destroy(particles, 5f);
-                return; // stop after the first valid agent
+                return hit.collider.gameObject;
             }
         }
 
         Debug.Log("no other agents found in raycast hits");
+        return null;
     }
 
     public void changeSelectedAgent(GameObject newObject)
     {
-        if (selectedAgent) updatePointsOfInterest(false, selectedAgent); //turn off POIs of old agent
-        updatePointsOfInterest(true, newObject);      //turn on POIs of new agent
+            //selectedagent
         selectedAgent = newObject;
+
+            //camera
         camController.currentPlayer = newObject.transform;
+
+            //particles
+        particles = Instantiate(particleSystem, selectedAgent.transform.position, Quaternion.identity);
+        Destroy(particles, 5f);
+
+            //degbug
         Debug.Log("Switched control to " + newObject.name);
     }
 
@@ -108,14 +175,28 @@ public class LogicScript : MonoBehaviour
             case "Blue Agent":
                 tagToCheck = "Agent";
                 break;
-            case "Yellow Agent":
+            case "Green Agent":
                 tagToCheck = "Guard";
                 break;
             default:
-                Debug.Log("couldn't find values for object with name " + agent.name);
+                //this agent has no POI-specific abilities
                 break;
         }
+        if (tagToCheck != "") selectedScript.setPOIs(layer, tagToCheck);
+    }
 
-        selectedScript.setPOIs(layer, tagToCheck);
+    public void setLoopPrefs(GameObject agentToUpdate, bool toggleOn) //will toggle POIs and highlights
+    {
+        agentToUpdate.transform.GetChild(2).gameObject.SetActive(toggleOn);
+        updatePointsOfInterest(toggleOn, agentToUpdate);
+    }
+
+    public bool outsideLoopCheck(GameObject agentToCheck)
+    {
+        foreach(GameObject agentInLoop in loopers)
+        {
+            if (agentToCheck.name == agentInLoop.name) return false; //found inside loop
+        }
+        return true;
     }
 }
