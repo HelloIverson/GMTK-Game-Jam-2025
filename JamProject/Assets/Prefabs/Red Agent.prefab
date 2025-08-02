@@ -302,7 +302,7 @@ MonoBehaviour:
   footstepSounds:
   - {fileID: 8300000, guid: 0d54653003bc3524ab6b64cac060bd52, type: 3}
   - {fileID: 8300000, guid: 245965889d0a183438ef3478b27122c0, type: 3}
-  stepTime: 0.2
+  stepTime: 0.35
 --- !u!195 &2260341270634369501
 NavMeshAgent:
   m_ObjectHideFlags: 0

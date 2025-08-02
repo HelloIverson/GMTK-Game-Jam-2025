@@ -285,7 +285,7 @@ MonoBehaviour:
   guardSightRange: 10
   footstepSounds:
   - {fileID: 8300000, guid: 245965889d0a183438ef3478b27122c0, type: 3}
-  stepTime: 0.2
+  stepTime: 0.3
 --- !u!195 &5269191669310676645
 NavMeshAgent:
   m_ObjectHideFlags: 0
