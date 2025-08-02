@@ -49,8 +49,11 @@ public class LogicScript : MonoBehaviour
         // movement
         if (Input.GetMouseButtonDown(0)) // left mouse button pressed
         {
-            PlayerController selectedScript = selectedAgent.GetComponent<PlayerController>();
-            selectedScript.updateDestination();
+            foreach(GameObject agentInLoop in loopers)
+            {
+                PlayerController selectedScript = agentInLoop.GetComponent<PlayerController>();
+                selectedScript.updateDestination();
+            }
         }
 
         // indicator on
@@ -91,10 +94,10 @@ public class LogicScript : MonoBehaviour
                     loopers = new List<GameObject>();
 
                     //and now actually switch selectedAgent
-                    changeSelectedAgent(raycastedAgent);
                     loopers.Add(raycastedAgent);
                     setLoopPrefs(raycastedAgent, true);
                 }
+                changeSelectedAgent(raycastedAgent);
             }
         }
 
