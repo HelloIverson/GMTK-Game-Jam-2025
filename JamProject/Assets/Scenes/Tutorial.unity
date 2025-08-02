@@ -1064,6 +1064,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1030913590}
+        m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
+        m_MethodName: toggleUI
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 826948570}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -1118,8 +1130,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 4.6159973, y: 1.9125061}
+  m_SizeDelta: {x: 50.7766, y: 30.0266}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &883131776
 MonoBehaviour:
@@ -1601,6 +1613,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1030913590}
+        m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
+        m_MethodName: toggleUI
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1024920685}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -1723,6 +1747,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1030913590 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
+  m_PrefabInstance: {fileID: 572695519}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030913586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9218e91fde4c5419a5ebea7dddc937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1342616323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,6 +1981,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1030913590}
+        m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
+        m_MethodName: toggleUI
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1507852941}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: LoadScene
@@ -1956,6 +2003,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Start Menus
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1507852941}
+        m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
+        m_MethodName: ToMenusMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!222 &1342616328
@@ -6023,7 +6082,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6448,17 +6507,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: LoadNextScene
-        m_Mode: 1
+      - m_Target: {fileID: 1030913590}
+        m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
+        m_MethodName: toggleUI
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!222 &1547294505
 CanvasRenderer:
@@ -8939,6 +8998,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1030913590}
+        m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
+        m_MethodName: toggleUI
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1507852941}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: restart
@@ -9420,6 +9491,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1030913590}
+        m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
+        m_MethodName: toggleUI
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 5932906112151243978}
         m_TargetAssemblyTypeName: TypeScript, Assembly-CSharp
