@@ -1,10 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CameraController : MonoBehaviour
 {
     public Transform currentPlayer;
-    public Transform[] potentialPointsOfInterest;
+    public List<Transform> potentialPointsOfInterest;
 
     public float minSize = 2f;
     public float moveOffset = 0f; //for when following only the player
@@ -19,15 +20,7 @@ public class CameraController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //GameObject[] tempAgents = GameObject.FindGameObjectsWithTag("Agent");
-        //foreach (GameObject testAgent in tempAgents)
-        //{
-        //    if (testAgent.name == defaultNameOfStartingPlayer)
-        //    {
-        //        currentPlayer = testAgent.transform;
-        //        break;
-        //    }
-        //}
+        searchPotentialPOIs();
 
         //set the x and y of the camera to the current player
         if (currentPlayer != null)
@@ -46,7 +39,7 @@ public class CameraController : MonoBehaviour
         bool onlyPlayer = true;
         ArrayList POIX = new ArrayList();
         ArrayList POIY = new ArrayList();
-        for (int i = 0; i < potentialPointsOfInterest.Length; i++)
+        for (int i = 0; i < potentialPointsOfInterest.Count; i++)
         {
             //if potential point of interest is layer "Point of Interest"
             if (potentialPointsOfInterest[i].gameObject.layer == 3)
@@ -119,5 +112,24 @@ public class CameraController : MonoBehaviour
         oldPlayer = currentPlayer.position;
 
 
+    }
+
+    void searchPotentialPOIs()
+    {
+        GameObject[] agentsPOIUpdate = GameObject.FindGameObjectsWithTag("Agent");
+        GameObject[] guardsPOIUpdate = GameObject.FindGameObjectsWithTag("Guard");
+        GameObject[] goalPOIUpdate = GameObject.FindGameObjectsWithTag("Goal");
+        foreach (GameObject agent in agentsPOIUpdate)
+        {
+            potentialPointsOfInterest.Add(agent.transform);
+        }
+        foreach (GameObject guard in guardsPOIUpdate)
+        {
+            potentialPointsOfInterest.Add(guard.transform);
+        }
+        foreach (GameObject goal in goalPOIUpdate)
+        {
+            potentialPointsOfInterest.Add(goal.transform);
+        }
     }
 }
