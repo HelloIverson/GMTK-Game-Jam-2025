@@ -52,11 +52,19 @@ public class LogicScript : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space)) // spacebar released
         {
             selectedAgent.transform.Find("Indicator").gameObject.SetActive(false);
-            raycastForNewAgent();
+            GameObject newAgent = raycastForAgent();
+            if (newAgent)
+            {
+                if (Input.GetKey(KeyCode.Z)) // z key held
+                {
+
+                }
+                changeSelectedAgent(newAgent);
+            }
         }
     }
 
-    public void raycastForNewAgent()
+    public GameObject raycastForAgent()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 agentToMouse = (mousePos - selectedAgent.transform.position).normalized;
@@ -67,31 +75,38 @@ public class LogicScript : MonoBehaviour
         if (hits.Length == 0)
         {
             Debug.Log("didn't find anything");
-            return;
+            return null;
         }
 
         foreach (RaycastHit2D hit in hits)
         {
             if (hit.collider != null && hit.collider.CompareTag("Agent") && hit.collider.gameObject != selectedAgent)
             {
-                selectedAgent.transform.GetChild(2).gameObject.SetActive(false);
-                changeSelectedAgent(hit.collider.gameObject);
-                selectedAgent.transform.GetChild(2).gameObject.SetActive(true);
-                particles = Instantiate(particleSystem, selectedAgent.transform.position, Quaternion.identity);
-                Destroy(particles, 5f);
-                return; // stop after the first valid agent
+                return hit.collider.gameObject;
             }
         }
 
         Debug.Log("no other agents found in raycast hits");
+        return null;
     }
 
     public void changeSelectedAgent(GameObject newObject)
     {
-        if (selectedAgent) updatePointsOfInterest(false, selectedAgent); //turn off POIs of old agent
-        updatePointsOfInterest(true, newObject);      //turn on POIs of new agent
+            //in-loop settings (POI and highlight)
+        if (selectedAgent) setLoopPrefs(selectedAgent, false); //turn off for old agent
+        setLoopPrefs(newObject, true);                         //turn on for new agent
+
+            //selectedagent
         selectedAgent = newObject;
+
+            //camera
         camController.currentPlayer = newObject.transform;
+
+            //particles
+        particles = Instantiate(particleSystem, selectedAgent.transform.position, Quaternion.identity);
+        Destroy(particles, 5f);
+
+            //degbug
         Debug.Log("Switched control to " + newObject.name);
     }
 
@@ -116,5 +131,11 @@ public class LogicScript : MonoBehaviour
                 break;
         }
         if (tagToCheck != "") selectedScript.setPOIs(layer, tagToCheck);
+    }
+
+    public void setLoopPrefs(GameObject agentToUpdate, bool toggleOn) //will toggle POIs and highlights
+    {
+        agentToUpdate.transform.GetChild(2).gameObject.SetActive(toggleOn);
+        updatePointsOfInterest(toggleOn, agentToUpdate);
     }
 }
