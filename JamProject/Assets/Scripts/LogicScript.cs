@@ -108,14 +108,13 @@ public class LogicScript : MonoBehaviour
             case "Blue Agent":
                 tagToCheck = "Agent";
                 break;
-            case "Yellow Agent":
+            case "Green Agent":
                 tagToCheck = "Guard";
                 break;
             default:
-                Debug.Log("couldn't find values for object with name " + agent.name);
+                //this agent has no POI-specific abilities
                 break;
         }
-
-        selectedScript.setPOIs(layer, tagToCheck);
+        if (tagToCheck != "") selectedScript.setPOIs(layer, tagToCheck);
     }
 }
