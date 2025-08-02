@@ -88,8 +88,34 @@ public class LogicScript : MonoBehaviour
 
     public void changeSelectedAgent(GameObject newObject)
     {
+        if (selectedAgent) updatePointsOfInterest(false, selectedAgent); //turn off POIs of old agent
+        updatePointsOfInterest(true, newObject);      //turn on POIs of new agent
         selectedAgent = newObject;
         camController.currentPlayer = newObject.transform;
         Debug.Log("Switched control to " + newObject.name);
+    }
+
+    public void updatePointsOfInterest(bool setPOI, GameObject agent)
+    {
+        PlayerController selectedScript = agent.GetComponent<PlayerController>();
+        int layer = setPOI ? 3 : 0; //if setting as a POI, put on layer 3, otherwise on layer 0
+        string tagToCheck = "";
+        switch(agent.name)
+        {
+            case "Red Agent":
+                tagToCheck = "Goal";
+                break;
+            case "Blue Agent":
+                tagToCheck = "Agent";
+                break;
+            case "Yellow Agent":
+                tagToCheck = "Guard";
+                break;
+            default:
+                Debug.Log("couldn't find values for object with name " + agent.name);
+                break;
+        }
+
+        selectedScript.setPOIs(layer, tagToCheck);
     }
 }

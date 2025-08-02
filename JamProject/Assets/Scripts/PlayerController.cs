@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     public NavMeshAgent agent;
+    public float guardSightRange = 10f;
 
     [SerializeField]
     private AudioClip[] footstepSounds;
@@ -57,7 +58,18 @@ public class PlayerController : MonoBehaviour
         {
             if (obj.CompareTag(tagsToUpdate))
             {
-                obj.layer = newLayer;
+                if (tagsToUpdate != "Guard")
+                {
+                    obj.layer = newLayer;
+                    continue;
+                }
+                Debug.Log("checking for guards");
+                //For Yellow (can see guards), theres a special exception that checks for the distance away
+                if (Vector3.Distance(obj.transform.position, transform.position) <= guardSightRange)
+                {
+                    obj.layer = newLayer;
+                    Debug.Log("found guard");
+                }
             }
         }
     }
