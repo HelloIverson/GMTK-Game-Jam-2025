@@ -2538,6 +2538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swapSound: {fileID: 8300000, guid: b2d5d7e57895b2745b155d240ed5a5a5, type: 3}
+  groupSound: {fileID: 8300000, guid: f10e7ff812627164fa39911459400577, type: 3}
+  ungroupSound: {fileID: 8300000, guid: 2ec14d07946c7fe429f08fc058e5b2f8, type: 3}
   defaultNameOfStartingPlayer: Blue Agent
   maxSwapDistance: 4
   agents: []

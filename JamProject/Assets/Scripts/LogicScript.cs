@@ -10,6 +10,10 @@ public class LogicScript : MonoBehaviour
 
     [SerializeField]
     private AudioClip swapSound;
+    [SerializeField]
+    private AudioClip groupSound;
+    [SerializeField]
+    private AudioClip ungroupSound;
 
     public string defaultNameOfStartingPlayer;
 
@@ -79,6 +83,7 @@ public class LogicScript : MonoBehaviour
                 {
                     loopers.Add(raycastedAgent);
                     setLoopPrefs(raycastedAgent, true);
+                    audioSource.PlayOneShot(groupSound);
                 }
             }
         }
@@ -120,6 +125,7 @@ public class LogicScript : MonoBehaviour
             }
             loopers = new List<GameObject>();
             loopers.Add(selectedAgent);
+            audioSource.PlayOneShot(ungroupSound);
         }
 
 
