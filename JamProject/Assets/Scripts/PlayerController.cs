@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(lastPos != transform.position)
+        if((lastPos - transform.position).magnitude > 0.001)
         {
             stepTimer += Time.deltaTime;
             if (stepTimer >= stepTime)
