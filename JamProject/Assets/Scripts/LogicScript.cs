@@ -168,23 +168,26 @@ public class LogicScript : MonoBehaviour
         if (loopers.Count == 0) Debug.LogError("OH NO SOMETHING IS VERY WRONG");
 
         //guards chasing
-        for (int i = 0; i < guards.Length; i++)
+        if (!isTutorial)
         {
-            if (guards[i].GetComponent<AI_Controller>().chasing == true)
+            for (int i = 0; i < guards.Length; i++)
             {
-                chaseCount++;
+                if (guards[i].GetComponent<AI_Controller>().chasing == true)
+                {
+                    chaseCount++;
+                }
             }
-        }
-        if (chaseCount == 0)
-        {
-            guards[0].GetComponent<AI_Controller>().suspenseMusic();
-        }
-        if (chaseCount > 0)
-        {
-            guards[0].GetComponent<AI_Controller>().chaseMusic();
-        }
+            if (chaseCount == 0)
+            {
+                guards[0].GetComponent<AI_Controller>().suspenseMusic();
+            }
+            if (chaseCount > 0)
+            {
+                guards[0].GetComponent<AI_Controller>().chaseMusic();
+            }
 
-        chaseCount = 0;
+            chaseCount = 0;
+        }
     }
 
     public void toggleUI(bool setInUI)
