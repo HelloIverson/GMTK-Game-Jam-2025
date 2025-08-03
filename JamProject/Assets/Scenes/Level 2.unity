@@ -352,11 +352,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
---- !u!4 &53210498 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5231815819210634213, guid: e5eca688a8aeb474099731907fea3766, type: 3}
-  m_PrefabInstance: {fileID: 53210490}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &76859817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1095,7 +1090,7 @@ Transform:
   m_GameObject: {fileID: 1378519895}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1584, y: 6.60836, z: 0}
+  m_LocalPosition: {x: -4.25, y: 11.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13065,14 +13060,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211a7f9dd7f499c43b897e5e6ca5c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPlayer: {fileID: 53210498}
+  currentPlayer: {fileID: 0}
   potentialPointsOfInterest: []
   minSize: 3
   moveOffset: 0
   zoomSpeed: 1
   smoothSpeed: 5
-  smoothSpeedWhenZooming: 1
-  bufferWhenZoomedOut: 1.05
+  smoothSpeedWhenZooming: 3
+  bufferWhenZoomedOut: 2
 --- !u!1001 &1436680325
 PrefabInstance:
   m_ObjectHideFlags: 0
