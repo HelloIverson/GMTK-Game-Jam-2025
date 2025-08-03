@@ -86,7 +86,7 @@ public class SceneExecutive : MonoBehaviour
 
     public void restart() {
         Debug.Log("Restarting current scene: " + SceneManager.GetActiveScene().name);
-        GoToScene(SceneManager.GetActiveScene().name);
+        LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void stopTime() {
