@@ -387,6 +387,22 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.42
       objectReference: {fileID: 0}
+    - target: {fileID: 4420283268538743489, guid: e5eca688a8aeb474099731907fea3766, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420283268538743489, guid: e5eca688a8aeb474099731907fea3766, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420283268538743489, guid: e5eca688a8aeb474099731907fea3766, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420283268538743489, guid: e5eca688a8aeb474099731907fea3766, type: 3}
+      propertyPath: m_SleepingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5231815819210634213, guid: e5eca688a8aeb474099731907fea3766, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.135
@@ -787,7 +803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7418051184981008126, guid: e38f7eb43b70bd94e8cc205a0b6b10dd, type: 3}
       propertyPath: m_Constraints
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13285,6 +13301,7 @@ MonoBehaviour:
   smoothSpeed: 5
   smoothSpeedWhenZooming: 3
   bufferWhenZoomedOut: 2
+  scrollWheel: 0
 --- !u!1001 &1436680325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13359,7 +13376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5896639052926375209, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
       propertyPath: m_BodyType
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896639052926375209, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8876544917637426131, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
@@ -13630,6 +13651,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2503333705043696783, guid: 9a43f7bfd0b85c346b74838624b151c5, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5245302409834587876, guid: 9a43f7bfd0b85c346b74838624b151c5, type: 3}
       propertyPath: m_Name
       value: Green Agent
@@ -13792,17 +13817,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1815150857 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 189747855104008362, guid: 4c227a569f1fbbd4aa1b301c7b764488, type: 3}
-  m_PrefabInstance: {fileID: 1988001719}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1842450750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14380,17 +14394,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4684475473196852520, guid: 4c227a569f1fbbd4aa1b301c7b764488, type: 3}
   m_PrefabInstance: {fileID: 1988001719}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1988001721 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 189747855104008362, guid: 4c227a569f1fbbd4aa1b301c7b764488, type: 3}
-  m_PrefabInstance: {fileID: 1988001719}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1988001722 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4067681969405620738, guid: 4c227a569f1fbbd4aa1b301c7b764488, type: 3}
@@ -20264,7 +20267,7 @@ PrefabInstance:
     - target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
       propertyPath: blackScreen
       value: 
-      objectReference: {fileID: 1988001721}
+      objectReference: {fileID: 0}
     - target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
       propertyPath: volumeSliders.Array.size
       value: 3

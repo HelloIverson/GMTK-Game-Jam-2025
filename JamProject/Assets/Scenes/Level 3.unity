@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.42
       objectReference: {fileID: 0}
+    - target: {fileID: 4420283268538743489, guid: e5eca688a8aeb474099731907fea3766, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5231815819210634213, guid: e5eca688a8aeb474099731907fea3766, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.79
@@ -1008,6 +1012,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3869683034963844731, guid: b4a0a99a24c02eb4286cf8048e096d8d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266967220854778551, guid: b4a0a99a24c02eb4286cf8048e096d8d, type: 3}
+      propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6442574619958714617, guid: b4a0a99a24c02eb4286cf8048e096d8d, type: 3}
@@ -25713,6 +25721,7 @@ MonoBehaviour:
   smoothSpeed: 5
   smoothSpeedWhenZooming: 1
   bufferWhenZoomedOut: 1.05
+  scrollWheel: 0
 --- !u!1001 &1412553560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25996,6 +26005,10 @@ PrefabInstance:
     - target: {fileID: 4537382244213766897, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
       propertyPath: m_Name
       value: Red Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896639052926375209, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8876544917637426131, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
@@ -26769,6 +26782,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5571502091622074523, guid: e38f7eb43b70bd94e8cc205a0b6b10dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418051184981008126, guid: e38f7eb43b70bd94e8cc205a0b6b10dd, type: 3}
+      propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -36970,6 +36987,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2503333705043696783, guid: 9a43f7bfd0b85c346b74838624b151c5, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5245302409834587876, guid: 9a43f7bfd0b85c346b74838624b151c5, type: 3}
       propertyPath: m_Name
       value: Green Agent

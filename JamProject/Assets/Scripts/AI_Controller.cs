@@ -6,6 +6,7 @@ public class AI_Controller : MonoBehaviour
 {
     public Transform[] waypoints; // array to hold your target points
     public Transform[] monitorPoints; //saves old points for when panic dies down
+    public Transform soundSource;
     public NavMeshAgent guardNavMeshAgent;
     private int currentWaypointIndex = 0;
     public SceneExecutive sceneManager;
@@ -28,8 +29,11 @@ public class AI_Controller : MonoBehaviour
         }
     }
 
-    void Update()
-    {
+    void Update() {
+    if(currentWaypointIndex==999999) {
+
+    } else {
+    
         // check if the agent has reached its current destination
         if (!guardNavMeshAgent.pathPending &&
             guardNavMeshAgent.remainingDistance <= guardNavMeshAgent.stoppingDistance &&
@@ -64,7 +68,7 @@ public class AI_Controller : MonoBehaviour
             }
         }
     }
-
+    }
     public void handleNoise(Transform source, float strength)
     {
         // update guard waypoints based on noise
@@ -88,6 +92,10 @@ public class AI_Controller : MonoBehaviour
         // panicking = false;
         // Debug.Log(panicking);
 
+
+    }
+    public void chase(Transform source) {
+        soundSource=source;
 
     }
 
