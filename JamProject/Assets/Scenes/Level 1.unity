@@ -13004,8 +13004,8 @@ MonoBehaviour:
   moveOffset: 0
   zoomSpeed: 1
   smoothSpeed: 5
-  smoothSpeedWhenZooming: 1
-  bufferWhenZoomedOut: 1.5
+  smoothSpeedWhenZooming: 3
+  bufferWhenZoomedOut: 2
 --- !u!1001 &1436680325
 PrefabInstance:
   m_ObjectHideFlags: 0
