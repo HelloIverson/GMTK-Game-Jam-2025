@@ -9076,7 +9076,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -9103,6 +9103,9 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1672093835}
   - {fileID: 1177073283}
+  monitorPoints:
+  - {fileID: 1177073283}
+  - {fileID: 1672093835}
   guardNavMeshAgent: {fileID: 1569516140}
   sceneManager: {fileID: 0}
 --- !u!212 &1569516142
@@ -9779,6 +9782,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1177073283}
   - {fileID: 1672093835}
+  monitorPoints: []
   guardNavMeshAgent: {fileID: 1688880366}
   sceneManager: {fileID: 0}
 --- !u!212 &1688880364
@@ -9861,7 +9865,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
