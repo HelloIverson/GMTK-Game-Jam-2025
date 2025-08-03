@@ -13078,6 +13078,63 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7, y: 1.2}
   m_EdgeRadius: 0
+--- !u!1001 &1482416591
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 543981762465041512, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_Name
+      value: Goal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.682606
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.3327827
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
 --- !u!1 &1770880265
 GameObject:
   m_ObjectHideFlags: 0
@@ -17818,6 +17875,10 @@ PrefabInstance:
       value: SceneManager
       objectReference: {fileID: 0}
     - target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
+      propertyPath: nextScene
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
       propertyPath: fadeInTime
       value: 1
       objectReference: {fileID: 0}
@@ -20505,7 +20566,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
         m_MethodName: toggleUI
         m_Mode: 6
@@ -20517,10 +20578,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: ChangeSFXVolume
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -21342,7 +21403,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
         m_MethodName: toggleUI
         m_Mode: 6
@@ -21354,7 +21415,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: ChangeMusicVolume
         m_Mode: 0
@@ -24401,7 +24462,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
         m_MethodName: toggleUI
         m_Mode: 6
@@ -24413,7 +24474,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: ChangeMasterVolume
         m_Mode: 0
@@ -25571,3 +25632,4 @@ SceneRoots:
   - {fileID: 8950050052637719599}
   - {fileID: 102773712}
   - {fileID: 334983926}
+  - {fileID: 1482416591}
