@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private GameObject noise;
 
     public bool isWalking;
+    public int buddies = 1;
 
     void Start()
     {
@@ -30,7 +31,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        bool wasWalking = isWalking;
         if((lastPos - transform.position).magnitude > 0.001f)
         {
             isWalking = true;
@@ -48,15 +48,8 @@ public class PlayerController : MonoBehaviour
             stepTimer = 0.19f; // Reset timer if not moving
         }
 
-        if (wasWalking != isWalking)
-        {
-            if (isWalking)
-            {
-                //noise.
-            }
-        }
-
         lastPos = transform.position;
+        updateNoiseStrength();
     }
 
     public void updateDestination()
@@ -89,5 +82,21 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void updateNoiseStrength()
+    {
+        float newNoiseStrength = (float)buddies * (isWalking ? 2 : 1); //double the noise strength if walking
+        if (noise.GetComponent<NoiseScript>().noiseStrength > newNoiseStrength && isWalking)
+        {
+            //only decrease if !isWalking
+            return;
+        }
+        noise.GetComponent<NoiseScript>().noiseStrength = newNoiseStrength;
+    }
+
+    public void updatePeopleInLoop(int peopleInLoop)
+    {
+        buddies = peopleInLoop;
     }
 }
