@@ -101,16 +101,16 @@ public class AI_Controller : MonoBehaviour
 
     public void chaseMusic()
     {
-        sceneManager.FadeToChaseMusic();
+        //sceneManager.FadeToChaseMusic();
     }
     public void suspenseMusic()
     {
-        sceneManager.FadeToSuspenseMusic();
+        //sceneManager.FadeToSuspenseMusic();
     }
 
     IEnumerator PanickingDelay()
     {
-        yield return new WaitForSeconds(panic);
+        yield return new WaitForSeconds(panic * 2);
         panicking = false;
         Debug.Log(panicking);
     }

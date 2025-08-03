@@ -174,28 +174,28 @@ public class LogicScript : MonoBehaviour
         if (loopers.Count == 0) Debug.LogError("OH NO SOMETHING IS VERY WRONG");
 
         //guards chasing
-        if (!isTutorial)
-        {
-            for (int i = 0; i < guards.Length; i++)
-            {
-                if (guards[i].GetComponent<AI_Controller>().chasing == true)
-                {
-                    chaseCount++;
-                }
-            }
-            if (chaseCount == 0)
-            {
-                chaseMusic = false;
-                if (chaseMusic != oldChaseMusic) guards[0].GetComponent<AI_Controller>().suspenseMusic();
-            }
-            if (chaseCount > 0)
-            {
-                chaseMusic = true;
-                if (chaseMusic != oldChaseMusic) guards[0].GetComponent<AI_Controller>().chaseMusic();
-            }
-            oldChaseMusic = chaseMusic;
-            chaseCount = 0;
-        }
+        // if (!isTutorial)
+        // {
+        //     for (int i = 0; i < guards.Length; i++)
+        //     {
+        //         if (guards[i].GetComponent<AI_Controller>().chasing == true)
+        //         {
+        //             chaseCount++;
+        //         }
+        //     }
+        //     if (chaseCount == 0)
+        //     {
+        //         chaseMusic = false;
+        //         if (chaseMusic != oldChaseMusic) guards[0].GetComponent<AI_Controller>().suspenseMusic();
+        //     }
+        //     if (chaseCount > 0)
+        //     {
+        //         chaseMusic = true;
+        //         if (chaseMusic != oldChaseMusic) guards[0].GetComponent<AI_Controller>().chaseMusic();
+        //     }
+        //     oldChaseMusic = chaseMusic;
+        //     chaseCount = 0;
+        // }
     }
 
     public void toggleUI(bool setInUI)
