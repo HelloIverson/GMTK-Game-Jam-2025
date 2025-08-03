@@ -235,6 +235,7 @@ public class LogicScript : MonoBehaviour
     public void setLoopPrefs(GameObject agentToUpdate, bool toggleOn) //will toggle POIs and highlights
     {
         agentToUpdate.transform.GetChild(2).gameObject.SetActive(toggleOn);
+        agentToUpdate.transform.GetChild(3).gameObject.SetActive(toggleOn);
         updatePointsOfInterest(toggleOn, agentToUpdate);
     }
 

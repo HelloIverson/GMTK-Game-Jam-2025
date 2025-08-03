@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        bool wasWalking = isWalking;
         if((lastPos - transform.position).magnitude > 0.001f)
         {
             isWalking = true;
@@ -46,14 +45,6 @@ public class PlayerController : MonoBehaviour
         {
             isWalking = false;
             stepTimer = 0.19f; // Reset timer if not moving
-        }
-
-        if (wasWalking != isWalking)
-        {
-            if (isWalking)
-            {
-                //noise.
-            }
         }
 
         lastPos = transform.position;
@@ -89,5 +80,13 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void updateNoiseStrength(int peopleInLoop)
+    {
+
+        float newNoiseStrength = (float)peopleInLoop * (isWalking ? 2 : 1); //double the noise strength if walking
+        noise.GetComponent<NoiseScript>().noiseStrength = newNoiseStrength;
+        //only decrease if !isWalking
     }
 }
