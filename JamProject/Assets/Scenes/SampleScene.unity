@@ -635,6 +635,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 846819fd62ca22b478d33e537cd61c8c, type: 3}
   - {fileID: 8300000, guid: 6eee7f295d5ff8b4f934dec7f44eaf97, type: 3}
   stepTime: 0.3
+  isWalking: 0
+  buddies: 1
 --- !u!212 &184136975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5445,6 +5447,8 @@ MonoBehaviour:
   swapSound: {fileID: 8300000, guid: b2d5d7e57895b2745b155d240ed5a5a5, type: 3}
   groupSound: {fileID: 8300000, guid: f10e7ff812627164fa39911459400577, type: 3}
   ungroupSound: {fileID: 8300000, guid: 2ec14d07946c7fe429f08fc058e5b2f8, type: 3}
+  isTutorial: 0
+  dialogsForTutorials: []
   defaultNameOfStartingPlayer: White Agent
   maxSwapDistance: 4
   agents: []
@@ -6358,6 +6362,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 846819fd62ca22b478d33e537cd61c8c, type: 3}
   - {fileID: 8300000, guid: 6eee7f295d5ff8b4f934dec7f44eaf97, type: 3}
   stepTime: 0.5
+  isWalking: 0
+  buddies: 1
 --- !u!212 &1515812975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8961,6 +8967,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 846819fd62ca22b478d33e537cd61c8c, type: 3}
   - {fileID: 8300000, guid: 6eee7f295d5ff8b4f934dec7f44eaf97, type: 3}
   stepTime: 0.4
+  isWalking: 0
+  buddies: 1
 --- !u!212 &1559341478
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9065,7 +9073,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -9092,6 +9100,9 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1672093835}
   - {fileID: 1177073283}
+  monitorPoints:
+  - {fileID: 1177073283}
+  - {fileID: 1672093835}
   guardNavMeshAgent: {fileID: 1569516140}
   sceneManager: {fileID: 0}
 --- !u!212 &1569516142
@@ -9253,6 +9264,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 846819fd62ca22b478d33e537cd61c8c, type: 3}
   - {fileID: 8300000, guid: 6eee7f295d5ff8b4f934dec7f44eaf97, type: 3}
   stepTime: 0.6
+  isWalking: 0
+  buddies: 1
 --- !u!195 &1586341594
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9645,6 +9658,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1177073283}
   - {fileID: 1672093835}
+  monitorPoints: []
   guardNavMeshAgent: {fileID: 1688880366}
   sceneManager: {fileID: 0}
 --- !u!212 &1688880364
@@ -9727,7 +9741,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -10002,6 +10016,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 846819fd62ca22b478d33e537cd61c8c, type: 3}
   - {fileID: 8300000, guid: 6eee7f295d5ff8b4f934dec7f44eaf97, type: 3}
   stepTime: 0.4
+  isWalking: 0
+  buddies: 1
 --- !u!212 &1756994334
 SpriteRenderer:
   m_ObjectHideFlags: 0

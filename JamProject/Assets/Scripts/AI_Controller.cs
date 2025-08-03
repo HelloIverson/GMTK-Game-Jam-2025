@@ -4,10 +4,12 @@ using UnityEngine.AI;
 public class AI_Controller : MonoBehaviour
 {
     public Transform[] waypoints; // array to hold your target points
+    public Transform[] monitorPoints; //saves old points for when panic dies down
     public NavMeshAgent guardNavMeshAgent;
     private int currentWaypointIndex = 0;
     public SceneExecutive sceneManager;
     private bool waitingForNextWaypoint = false;
+    private bool panicking = false;
 
     void Start()
     {
@@ -45,20 +47,36 @@ public class AI_Controller : MonoBehaviour
         {
             waitingForNextWaypoint = false;
         }
+        // if (!panicking)
+        // {
+        //     for (int i = 0; i < monitorPoints.Length; i++)
+        //     {
+        //         waypoints[i] = monitorPoints[i];
+        //     }
+        // }
     }
 
     public void handleNoise(Transform source, float strength)
     {
+        // update guard waypoints based on noise
         float panic = 0;
-        if (panic < strength / 2)
+        if (panic < strength)
         {
-            panic = strength / 2;
+            panic = strength;
         }
-        guardNavMeshAgent.speed = panic;
-        for (int i = 0; i < waypoints.Length + 1; i++)
+
+        guardNavMeshAgent.speed = panic / 4;
+
+        for (int i = 0; i < waypoints.Length; i++)
         {
             waypoints[i] = source;
+            panicking = true;
         }
+
+        // new WaitForSeconds(panic);
+        // panicking = false;
+        // Debug.Log(panicking);
+
 
     }
 
