@@ -77,7 +77,7 @@ public class AI_Controller : MonoBehaviour
             panic = strength;
         }
 
-        guardNavMeshAgent.speed = panic / 4;
+        guardNavMeshAgent.speed = panic;
 
         for (int i = 0; i < waypoints.Length; i++)
         {
@@ -110,7 +110,7 @@ public class AI_Controller : MonoBehaviour
 
     IEnumerator PanickingDelay()
     {
-        yield return new WaitForSeconds(panic * 2);
+        yield return new WaitForSeconds(panic);
         panicking = false;
         Debug.Log(panicking);
     }
