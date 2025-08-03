@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3721715350263565458}
   m_Layer: 0
   m_Name: SceneManager
-  m_TagString: Untagged
+  m_TagString: SceneManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,4 +47,5 @@ MonoBehaviour:
   nextScene: 
   fadeOutTime: 1
   fadeInTime: 0
+  volumeSliders: []
   blackScreen: {fileID: 0}
