@@ -14,6 +14,10 @@ public class LogicScript : MonoBehaviour
     private AudioClip groupSound;
     [SerializeField]
     private AudioClip ungroupSound;
+    [SerializeField]
+    private bool isTutorial;
+    [SerializeField]
+    private GameObject[] dialogsForTutorials;
 
     public string defaultNameOfStartingPlayer;
 
@@ -68,6 +72,11 @@ public class LogicScript : MonoBehaviour
                     PlayerController selectedScript = agentInLoop.GetComponent<PlayerController>();
                     selectedScript.updateDestination();
                 }
+                if (isTutorial && dialogsForTutorials[1].activeSelf)
+                {
+                    dialogsForTutorials[1].SetActive(false);
+                    dialogsForTutorials[2].SetActive(true);
+                }
             }
 
             // indicator on
@@ -88,6 +97,11 @@ public class LogicScript : MonoBehaviour
                         loopers.Add(raycastedAgent);
                         setLoopPrefs(raycastedAgent, true);
                         audioSource.PlayOneShot(groupSound);
+                        if(isTutorial && dialogsForTutorials[2].activeSelf)
+                        {
+                            dialogsForTutorials[2].SetActive(false);
+                            dialogsForTutorials[3].SetActive(true);
+                        }
                     }
                 }
             }
@@ -114,6 +128,11 @@ public class LogicScript : MonoBehaviour
                     }
                     changeSelectedAgent(raycastedAgent);
                     audioSource.PlayOneShot(swapSound);
+                    if (isTutorial && dialogsForTutorials[0].activeSelf)
+                    {
+                        dialogsForTutorials[0].SetActive(false);
+                        dialogsForTutorials[1].SetActive(true);
+                    }
                 }
             }
 
