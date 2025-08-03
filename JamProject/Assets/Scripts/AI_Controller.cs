@@ -35,9 +35,12 @@ public class AI_Controller : MonoBehaviour
         {
             waitingForNextWaypoint = true;
             // cycle through waypoints
-            currentWaypointIndex++;
-            currentWaypointIndex %= waypoints.Length;
-            guardNavMeshAgent.destination = waypoints[currentWaypointIndex].position;
+            if (waypoints.Length > 0)
+            {
+                currentWaypointIndex++;
+                currentWaypointIndex %= waypoints.Length;
+                guardNavMeshAgent.destination = waypoints[currentWaypointIndex].position;
+            }
             //Debug.Log(gameObject.name + ": moving to waypoint " + currentWaypointIndex);
         }
 
