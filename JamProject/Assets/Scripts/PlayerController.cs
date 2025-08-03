@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public float guardSightRange = 10f;
+    public float guardSightRange = 1000f;
 
     [SerializeField]
     private AudioClip[] footstepSounds;
@@ -74,31 +74,31 @@ public class PlayerController : MonoBehaviour
                     if (newLayer == 3)
                     {
                         //new POI :)
-                        transform.Find("Lantern").gameObject.SetActive(true);
+                        obj.transform.Find("Lantern").gameObject.SetActive(true);
                     }
                     else
                     {
                         //removing POI :(
-                        if (!transform.CompareTag("Agent")) transform.Find("Lantern").gameObject.SetActive(false);
+                        if (!obj.transform.CompareTag("Agent")) obj.transform.Find("Lantern").gameObject.SetActive(false);
                     }
                     continue;
                 }
                 //Debug.Log("checking for guards");
                 //For Yellow (can see guards), theres a special exception that checks for the distance away
-                if (Vector3.Distance(obj.transform.position, transform.position) <= guardSightRange)
+                if (newLayer == 3)
+                {
+                    if (Vector3.Distance(obj.transform.position, transform.position) <= guardSightRange)
+                    {
+                        obj.layer = newLayer;
+                        //new POI :)
+                        obj.transform.Find("Lantern").gameObject.SetActive(true);
+                    }
+                }
+                else
                 {
                     obj.layer = newLayer;
-                    if (newLayer == 3)
-                    {
-                        //new POI :)
-                        transform.Find("Lantern").gameObject.SetActive(true);
-                    }
-                    else
-                    {
-                        //removing POI :(
-                        if (!transform.CompareTag("Agent")) transform.Find("Lantern").gameObject.SetActive(false);
-                    }
-                    //Debug.Log("found guard");
+                    //removing POI :(
+                    if (!obj.transform.CompareTag("Agent")) obj.transform.Find("Lantern").gameObject.SetActive(false);
                 }
             }
         }
