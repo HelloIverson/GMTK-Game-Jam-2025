@@ -40,8 +40,6 @@ public class AI_Controller : MonoBehaviour
         {
             waitingForNextWaypoint = false;
         }
-<<<<<<< Updated upstream
-=======
 
         if (guardNavMeshAgent.velocity.sqrMagnitude > 0.01f)
         {
@@ -61,21 +59,6 @@ public class AI_Controller : MonoBehaviour
         {
             waypoints[i] = source;
         }
-
-    }
-
-    public void chaseMusic()
-    {
-        //sceneManager.FadeToChaseMusic();
-    }
-    public void suspenseMusic()
-    {
-        //sceneManager.FadeToSuspenseMusic();
->>>>>>> Stashed changes
-    }
-
-    public void handleNoise(Vector3 source, float strength)
-    {
 
     }
 
