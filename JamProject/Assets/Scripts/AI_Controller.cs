@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class AI_Controller : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class AI_Controller : MonoBehaviour
     public SceneExecutive sceneManager;
     private bool waitingForNextWaypoint = false;
     private bool panicking = false;
+    private float panic = 0;
+    private Coroutine myCoroutineInstance;
 
     void Start()
     {
@@ -47,19 +50,18 @@ public class AI_Controller : MonoBehaviour
         {
             waitingForNextWaypoint = false;
         }
-        // if (!panicking)
-        // {
-        //     for (int i = 0; i < monitorPoints.Length; i++)
-        //     {
-        //         waypoints[i] = monitorPoints[i];
-        //     }
-        // }
+        if (!panicking)
+        {
+            for (int i = 0; i < monitorPoints.Length; i++)
+            {
+                waypoints[i] = monitorPoints[i];
+            }
+        }
     }
 
     public void handleNoise(Transform source, float strength)
     {
         // update guard waypoints based on noise
-        float panic = 0;
         if (panic < strength)
         {
             panic = strength;
@@ -72,6 +74,8 @@ public class AI_Controller : MonoBehaviour
             waypoints[i] = source;
             panicking = true;
         }
+        // StopCoroutine(myCoroutineInstance);
+        myCoroutineInstance = StartCoroutine(PanickingDelay());
 
         // new WaitForSeconds(panic);
         // panicking = false;
@@ -87,6 +91,13 @@ public class AI_Controller : MonoBehaviour
     public void suspenseMusic()
     {
         //sceneManager.FadeToSuspenseMusic();
+    }
+
+    IEnumerator PanickingDelay()
+    {
+        yield return new WaitForSeconds(panic);
+        panicking = false;
+        Debug.Log(panicking);
     }
 
 }
