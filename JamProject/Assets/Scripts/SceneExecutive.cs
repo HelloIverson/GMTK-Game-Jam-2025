@@ -11,7 +11,9 @@ public class SceneExecutive : MonoBehaviour
     private float fadeOutTime;
     [SerializeField]
     private float fadeInTime;
-    
+    [SerializeField]
+    private Slider[] volumeSliders; // Sliders for master, music, and SFX volume
+
     public Image blackScreen;
 
     private bool fadeOut;
@@ -131,6 +133,21 @@ public class SceneExecutive : MonoBehaviour
     public void ChangeSFXVolume(float volume)
     {
         audioManager.GetComponent<AudioManager>().ChangeSFXVolume(volume);
+    }
+
+    public void SetVolumeSliders()
+    {
+        if (audioManager != null)
+        {
+            AudioManager audioManagerScript = audioManager.GetComponent<AudioManager>();
+            volumeSliders[0].value = audioManagerScript.masterVolume;
+            volumeSliders[1].value = audioManagerScript.sfxVolume;
+            volumeSliders[2].value = audioManagerScript.musicVolume;
+        }
+        else
+        {
+            Debug.LogWarning("AudioManager instance not found.");
+        }
     }
 
     private void GoToScene(string sceneName)
