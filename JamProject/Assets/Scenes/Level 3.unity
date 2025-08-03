@@ -1042,6 +1042,30 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[4]'
       value: 
       objectReference: {fileID: 742747389}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: monitorPoints.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: 'monitorPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1718369663}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: 'monitorPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1640599352}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: 'monitorPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 346488880}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: 'monitorPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 14024633}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: 'monitorPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 742747389}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26056,6 +26080,22 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[2]'
       value: 
       objectReference: {fileID: 1416563319}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: monitorPoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: 'monitorPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 196069019}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: 'monitorPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1705916693}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: 'monitorPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1416563319}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26770,7 +26810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1886509492
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26915,6 +26955,30 @@ PrefabInstance:
       objectReference: {fileID: 723865259}
     - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
       propertyPath: 'waypoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1176605545}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: monitorPoints.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: 'monitorPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1430150758}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: 'monitorPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 533603368}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: 'monitorPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1581115831}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: 'monitorPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 723865259}
+    - target: {fileID: 9045823937791599137, guid: 718575f703d743548a2260edaa995524, type: 3}
+      propertyPath: 'monitorPoints.Array.data[4]'
       value: 
       objectReference: {fileID: 1176605545}
     m_RemovedComponents: []
