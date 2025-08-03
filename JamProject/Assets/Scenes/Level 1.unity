@@ -13309,7 +13309,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -18079,6 +18079,22 @@ PrefabInstance:
       propertyPath: blackScreen
       value: 
       objectReference: {fileID: 189747855460324443}
+    - target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
+      propertyPath: volumeSliders.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
+      propertyPath: 'volumeSliders.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8069336129296177588}
+    - target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
+      propertyPath: 'volumeSliders.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3146338539141619819}
+    - target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
+      propertyPath: 'volumeSliders.Array.data[2]'
+      value: 
+      objectReference: {fileID: 4067681970793596659}
     - target: {fileID: 5634943153509898069, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.89575
@@ -20230,7 +20246,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: stopTime
         m_Mode: 1
@@ -20266,7 +20282,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
         m_MethodName: toggleUI
         m_Mode: 6
@@ -21310,7 +21326,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: resumeTime
         m_Mode: 1
@@ -21334,7 +21350,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
         m_MethodName: toggleUI
         m_Mode: 6
