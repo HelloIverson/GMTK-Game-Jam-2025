@@ -168,6 +168,7 @@ public class LogicScript : MonoBehaviour
         }
         else
         {
+            Debug.Log("UI is active, not processing input");
             toggleUI(false);
         }
 
