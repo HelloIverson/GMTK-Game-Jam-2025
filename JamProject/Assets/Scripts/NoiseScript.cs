@@ -45,7 +45,7 @@ public class NoiseScript : MonoBehaviour
         //else 
         if (collision.CompareTag("Guard"))
         {
-            collision.gameObject.GetComponent<AI_Controller>().handleNoise(transform.position, noiseStrength);
+            collision.gameObject.GetComponent<AI_Controller>().handleNoise(transform, noiseStrength);
         }
     }
 

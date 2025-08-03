@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private GameObject noise;
 
     public bool isWalking;
+    public int buddies = 1;
 
     void Start()
     {
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
         }
 
         lastPos = transform.position;
+        updateNoiseStrength();
     }
 
     public void updateDestination()
@@ -82,11 +84,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void updateNoiseStrength(int peopleInLoop)
+    public void updateNoiseStrength()
     {
-
-        float newNoiseStrength = (float)peopleInLoop * (isWalking ? 2 : 1); //double the noise strength if walking
+        float newNoiseStrength = (float)buddies * (isWalking ? 2 : 1); //double the noise strength if walking
+        if (noise.GetComponent<NoiseScript>().noiseStrength > newNoiseStrength && isWalking)
+        {
+            //only decrease if !isWalking
+            return;
+        }
         noise.GetComponent<NoiseScript>().noiseStrength = newNoiseStrength;
-        //only decrease if !isWalking
+    }
+
+    public void updatePeopleInLoop(int peopleInLoop)
+    {
+        buddies = peopleInLoop;
     }
 }
