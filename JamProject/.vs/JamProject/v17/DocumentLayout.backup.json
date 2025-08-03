@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\TypeScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\TypeScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\SceneExecutive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\SceneExecutive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\LogicScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\LogicScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\TypeScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\TypeScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lucad\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\SceneManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -42,6 +46,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "SceneExecutive.cs",
+              "DocumentMoniker": "C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\SceneExecutive.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SceneExecutive.cs",
+              "ToolTip": "C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\SceneExecutive.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SceneExecutive.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T02:38:31.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AudioManager.cs",
               "DocumentMoniker": "C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\AudioManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AudioManager.cs",
@@ -53,30 +69,30 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "TypeScript.cs",
               "DocumentMoniker": "C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\TypeScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TypeScript.cs",
               "ToolTip": "C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\TypeScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\TypeScript.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAADEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-01T23:12:00.661Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "LogicScript.cs",
               "DocumentMoniker": "C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\LogicScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LogicScript.cs",
               "ToolTip": "C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\LogicScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\LogicScript.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-01T19:01:11.146Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "SceneManager.cs",
               "DocumentMoniker": "C:\\Users\\lucad\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\SceneManager.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\lucad\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\SceneManager.cs",
@@ -88,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
@@ -100,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CameraController.cs",
               "DocumentMoniker": "C:\\Users\\miktn\\OneDrive\\Documents\\GitHub\\GMTK-Game-Jam-2025\\JamProject\\Assets\\Scripts\\CameraController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CameraController.cs",
