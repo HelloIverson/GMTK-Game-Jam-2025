@@ -18560,7 +18560,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
         m_MethodName: toggleUI
         m_Mode: 6
@@ -18572,7 +18572,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: ToMenusMusic
         m_Mode: 1
@@ -18584,7 +18584,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -19280,7 +19280,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
         m_MethodName: toggleUI
         m_Mode: 6
@@ -19292,7 +19292,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: restart
         m_Mode: 1
@@ -21187,7 +21187,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
         m_MethodName: toggleUI
         m_Mode: 6
@@ -21199,7 +21199,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: SetVolumeSliders
         m_Mode: 1
@@ -22652,7 +22652,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
         m_MethodName: toggleUI
         m_Mode: 6
@@ -22664,7 +22664,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -22676,7 +22676,7 @@ MonoBehaviour:
           m_StringArgument: Start Menus
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: ToMenusMusic
         m_Mode: 1
