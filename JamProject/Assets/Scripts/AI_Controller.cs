@@ -1,15 +1,19 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AI_Controller : MonoBehaviour
 {
-    public Transform[] waypoints; // Array to hold your target points
-    public UnityEngine.AI.NavMeshAgent guardNavMeshAgent;
+    public Transform[] waypoints; // array to hold your target points
+    public NavMeshAgent guardNavMeshAgent;
     private int currentWaypointIndex = 0;
     public SceneExecutive sceneManager;
+    private bool waitingForNextWaypoint = false;
 
     void Start()
     {
-        guardNavMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        guardNavMeshAgent.updateRotation = false;
+        guardNavMeshAgent.updateUpAxis = false;
+        guardNavMeshAgent = GetComponent<NavMeshAgent>();
         // set the initial destination to the first waypoint
         if (waypoints.Length > 0)
         {
@@ -19,13 +23,22 @@ public class AI_Controller : MonoBehaviour
 
     void Update()
     {
-        // Check if the agent has reached its current destination
-        if (!guardNavMeshAgent.pathPending && guardNavMeshAgent.remainingDistance < guardNavMeshAgent.stoppingDistance)
+        // check if the agent has reached its current destination
+        if (!guardNavMeshAgent.pathPending &&
+            guardNavMeshAgent.remainingDistance <= guardNavMeshAgent.stoppingDistance &&
+            !waitingForNextWaypoint)
         {
-            // Move to the next waypoint
-            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length; // Cycle through waypoints
+            waitingForNextWaypoint = true;
+            // cycle through waypoints
+            currentWaypointIndex++;
+            currentWaypointIndex %= waypoints.Length;
             guardNavMeshAgent.destination = waypoints[currentWaypointIndex].position;
-            Debug.Log("updated");
+            //Debug.Log(gameObject.name + ": moving to waypoint " + currentWaypointIndex);
+        }
+
+        if (guardNavMeshAgent.velocity.sqrMagnitude > 0.01f)
+        {
+            waitingForNextWaypoint = false;
         }
     }
 
@@ -34,9 +47,13 @@ public class AI_Controller : MonoBehaviour
 
     }
 
-    public void giveChase()
+    public void chaseMusic()
     {
         //sceneManager.FadeToChaseMusic();
+    }
+    public void suspenseMusic()
+    {
+        //sceneManager.FadeToSuspenseMusic();
     }
 
 }
