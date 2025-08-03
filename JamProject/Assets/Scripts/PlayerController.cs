@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     private AudioSource audioSource;
     private float stepTimer = 0.19f; // Timer to track when to play the next step sound
     private Vector3 lastPos;
+    private GameObject noise;
+
+    public bool isWalking;
 
     void Start()
     {
@@ -21,12 +24,16 @@ public class PlayerController : MonoBehaviour
         agent.updateUpAxis = false;
         audioSource = GetComponent<AudioSource>();
         lastPos = transform.position;
+        noise = transform.Find("Noise").gameObject;
+        isWalking = false;
     }
 
     void Update()
     {
-        if((lastPos - transform.position).magnitude > 0.001)
+        bool wasWalking = isWalking;
+        if((lastPos - transform.position).magnitude > 0.001f)
         {
+            isWalking = true;
             stepTimer += Time.deltaTime;
             if (stepTimer >= stepTime)
             {
@@ -37,8 +44,18 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            isWalking = false;
             stepTimer = 0.19f; // Reset timer if not moving
         }
+
+        if (wasWalking != isWalking)
+        {
+            if (isWalking)
+            {
+                //noise.
+            }
+        }
+
         lastPos = transform.position;
     }
 
