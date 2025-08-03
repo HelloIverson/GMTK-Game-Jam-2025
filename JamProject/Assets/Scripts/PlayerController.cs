@@ -50,6 +50,9 @@ public class PlayerController : MonoBehaviour
 
         lastPos = transform.position;
         updateNoiseStrength();
+
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+
     }
 
     public void updateDestination()
