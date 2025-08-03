@@ -16,6 +16,7 @@ public class AI_Audio_Controller : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         stepTimer = 0.19f; // Initialize the step timer
+        logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
     // Update is called once per frame
