@@ -27,7 +27,7 @@ public class LogicScript : MonoBehaviour
     private AudioSource audioSource;
 
     public GameObject particleSystem;
-
+    public bool inUI = false;
 
     void Start()
     {
@@ -58,81 +58,91 @@ public class LogicScript : MonoBehaviour
 
     void Update()
     {
-        // movement
-        if (Input.GetMouseButtonDown(0)) // left mouse button pressed
+        if (!inUI)
         {
-            foreach(GameObject agentInLoop in loopers)
+            // movement
+            if (Input.GetMouseButtonUp(0)) // left mouse button pressed
             {
-                PlayerController selectedScript = agentInLoop.GetComponent<PlayerController>();
-                selectedScript.updateDestination();
-            }
-        }
-
-        // indicator on
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.X)) // z key or x key pressed
-        {
-            selectedAgent.transform.Find("Indicator").gameObject.SetActive(true);
-        }
-
-        // talk
-        if (Input.GetKeyUp(KeyCode.X) && !Input.GetKey(KeyCode.Z)) // x key released (and z not already pressed)
-        {
-            selectedAgent.transform.Find("Indicator").gameObject.SetActive(false);
-            GameObject raycastedAgent = raycastForAgent();
-            if (raycastedAgent)
-            {
-                if (outsideLoopCheck(raycastedAgent))
+                foreach (GameObject agentInLoop in loopers)
                 {
-                    loopers.Add(raycastedAgent);
-                    setLoopPrefs(raycastedAgent, true);
-                    audioSource.PlayOneShot(groupSound);
+                    PlayerController selectedScript = agentInLoop.GetComponent<PlayerController>();
+                    selectedScript.updateDestination();
                 }
             }
-        }
 
-        // switch
-        if (Input.GetKeyUp(KeyCode.Z) && !Input.GetKey(KeyCode.X)) // z key released (and x not already pressed)
-        {
-            selectedAgent.transform.Find("Indicator").gameObject.SetActive(false);
-            GameObject raycastedAgent = raycastForAgent();
-            if (raycastedAgent)
+            // indicator on
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.X)) // z key or x key pressed
             {
-                if (outsideLoopCheck(raycastedAgent))
+                selectedAgent.transform.Find("Indicator").gameObject.SetActive(true);
+            }
+
+            // talk
+            if (Input.GetKeyUp(KeyCode.X) && !Input.GetKey(KeyCode.Z)) // x key released (and z not already pressed)
+            {
+                selectedAgent.transform.Find("Indicator").gameObject.SetActive(false);
+                GameObject raycastedAgent = raycastForAgent();
+                if (raycastedAgent)
                 {
-                    //we're switching outside the loop, so we need to clear whats left there
-                    foreach (GameObject agentInLoop in loopers)
+                    if (outsideLoopCheck(raycastedAgent))
+                    {
+                        loopers.Add(raycastedAgent);
+                        setLoopPrefs(raycastedAgent, true);
+                        audioSource.PlayOneShot(groupSound);
+                    }
+                }
+            }
+
+            // switch
+            if (Input.GetKeyUp(KeyCode.Z) && !Input.GetKey(KeyCode.X)) // z key released (and x not already pressed)
+            {
+                selectedAgent.transform.Find("Indicator").gameObject.SetActive(false);
+                GameObject raycastedAgent = raycastForAgent();
+                if (raycastedAgent)
+                {
+                    if (outsideLoopCheck(raycastedAgent))
+                    {
+                        //we're switching outside the loop, so we need to clear whats left there
+                        foreach (GameObject agentInLoop in loopers)
+                        {
+                            setLoopPrefs(agentInLoop, false);
+                        }
+                        loopers = new List<GameObject>();
+
+                        //and now actually switch selectedAgent
+                        loopers.Add(raycastedAgent);
+                        setLoopPrefs(raycastedAgent, true);
+                    }
+                    changeSelectedAgent(raycastedAgent);
+                    audioSource.PlayOneShot(swapSound);
+                }
+            }
+
+            // clear
+            if (Input.GetKeyDown(KeyCode.C)) // c key released
+            {
+                foreach (GameObject agentInLoop in loopers)
+                {
+                    if (agentInLoop != selectedAgent)
                     {
                         setLoopPrefs(agentInLoop, false);
                     }
-                    loopers = new List<GameObject>();
-
-                    //and now actually switch selectedAgent
-                    loopers.Add(raycastedAgent);
-                    setLoopPrefs(raycastedAgent, true);
                 }
-                changeSelectedAgent(raycastedAgent);
-                audioSource.PlayOneShot(swapSound);
+                loopers = new List<GameObject>();
+                loopers.Add(selectedAgent);
+                audioSource.PlayOneShot(ungroupSound);
             }
-        }
-
-        // clear
-        if (Input.GetKeyDown(KeyCode.C)) // c key released
+        } 
+        else
         {
-            foreach (GameObject agentInLoop in loopers)
-            {
-                if (agentInLoop != selectedAgent)
-                {
-                    setLoopPrefs(agentInLoop, false);
-                }
-            }
-            loopers = new List<GameObject>();
-            loopers.Add(selectedAgent);
-            audioSource.PlayOneShot(ungroupSound);
+            toggleUI(false);
         }
-
-
 
         if (loopers.Count == 0) Debug.LogError("OH NO SOMETHING IS VERY WRONG");
+    }
+
+    public void toggleUI(bool setInUI)
+    {
+        inUI = setInUI;
     }
 
     public GameObject raycastForAgent()

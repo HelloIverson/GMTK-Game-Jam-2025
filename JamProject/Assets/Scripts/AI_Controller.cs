@@ -3,29 +3,40 @@ using UnityEngine;
 public class AI_Controller : MonoBehaviour
 {
     public Transform[] waypoints; // Array to hold your target points
-    public UnityEngine.AI.NavMeshAgent agent;
+    public UnityEngine.AI.NavMeshAgent guardNavMeshAgent;
     private int currentWaypointIndex = 0;
+    public SceneExecutive sceneManager;
 
     void Start()
     {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-            // Set the initial destination to the first waypoint
+        guardNavMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        // set the initial destination to the first waypoint
         if (waypoints.Length > 0)
         {
-                agent.destination = waypoints[currentWaypointIndex].position;
+            guardNavMeshAgent.destination = waypoints[currentWaypointIndex].position;
         }
     }
 
     void Update()
     {
         // Check if the agent has reached its current destination
-        if (!agent.pathPending && agent.remainingDistance < agent.stoppingDistance)
+        if (!guardNavMeshAgent.pathPending && guardNavMeshAgent.remainingDistance < guardNavMeshAgent.stoppingDistance)
         {
             // Move to the next waypoint
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length; // Cycle through waypoints
-            agent.destination = waypoints[currentWaypointIndex].position;
+            guardNavMeshAgent.destination = waypoints[currentWaypointIndex].position;
             Debug.Log("updated");
         }
+    }
+
+    public void handleNoise(Vector3 source, float strength)
+    {
+
+    }
+
+    public void giveChase()
+    {
+        //sceneManager.FadeToChaseMusic();
     }
 
 }
