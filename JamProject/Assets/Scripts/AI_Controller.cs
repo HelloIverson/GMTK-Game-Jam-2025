@@ -9,6 +9,7 @@ public class AI_Controller : MonoBehaviour
     public NavMeshAgent guardNavMeshAgent;
     private int currentWaypointIndex = 0;
     public SceneExecutive sceneManager;
+    public bool chasing = false;
     private bool waitingForNextWaypoint = false;
     private bool panicking = false;
     private float panic = 0;
@@ -55,6 +56,7 @@ public class AI_Controller : MonoBehaviour
             for (int i = 0; i < monitorPoints.Length; i++)
             {
                 waypoints[i] = monitorPoints[i];
+                chasing = false;
             }
         }
     }
@@ -73,6 +75,7 @@ public class AI_Controller : MonoBehaviour
         {
             waypoints[i] = source;
             panicking = true;
+            chasing = true;
         }
         // StopCoroutine(myCoroutineInstance);
         myCoroutineInstance = StartCoroutine(PanickingDelay());
@@ -86,11 +89,11 @@ public class AI_Controller : MonoBehaviour
 
     public void chaseMusic()
     {
-        //sceneManager.FadeToChaseMusic();
+        sceneManager.FadeToChaseMusic();
     }
     public void suspenseMusic()
     {
-        //sceneManager.FadeToSuspenseMusic();
+        sceneManager.FadeToSuspenseMusic();
     }
 
     IEnumerator PanickingDelay()

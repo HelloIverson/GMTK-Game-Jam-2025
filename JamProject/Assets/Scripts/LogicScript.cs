@@ -23,6 +23,8 @@ public class LogicScript : MonoBehaviour
 
     public float maxSwapDistance = 4f; // the maximum range you can switch characters
     public GameObject[] agents;
+    public GameObject[] guards;
+    public int chaseCount = 0;
     public CameraController camController;
 
     public GameObject selectedAgent;
@@ -97,12 +99,12 @@ public class LogicScript : MonoBehaviour
                         loopers.Add(raycastedAgent);
                         setLoopPrefs(raycastedAgent, true);
                         audioSource.PlayOneShot(groupSound);
-                        if(isTutorial && dialogsForTutorials[2].activeSelf)
+                        if (isTutorial && dialogsForTutorials[2].activeSelf)
                         {
                             dialogsForTutorials[2].SetActive(false);
                             dialogsForTutorials[3].SetActive(true);
                         }
-                        foreach(GameObject agentInLoop in loopers)
+                        foreach (GameObject agentInLoop in loopers)
                         {
                             agentInLoop.GetComponent<PlayerController>().updatePeopleInLoop(loopers.Count);
                         }
@@ -156,13 +158,32 @@ public class LogicScript : MonoBehaviour
                 loopers.Add(selectedAgent);
                 audioSource.PlayOneShot(ungroupSound);
             }
-        } 
+        }
         else
         {
             toggleUI(false);
         }
 
         if (loopers.Count == 0) Debug.LogError("OH NO SOMETHING IS VERY WRONG");
+
+        //guards chasing
+        for (int i = 0; i < guards.Length; i++)
+        {
+            if (guards[i].chasing == true)
+            {
+                chaseCount++;
+            }
+        }
+        if (chaseCount == 0)
+        {
+            guards[0].suspenseMusic();
+        }
+        if (chaseCount > 0)
+        {
+            guards[0].chaseMusic();
+        }
+
+        chaseCount = 0;
     }
 
     public void toggleUI(bool setInUI)
