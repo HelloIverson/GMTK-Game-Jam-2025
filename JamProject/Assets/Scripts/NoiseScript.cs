@@ -37,24 +37,25 @@ public class NoiseScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Noise"))
+        //if (collision.CompareTag("Noise"))
+        //{
+        //    if (collision.gameObject.GetComponent<NoiseScript>().noiseStrength >= 1.5f) noiseStrength *= noiseMultiplier;
+        //    updateSize();
+        //}
+        //else 
+        if (collision.CompareTag("Guard"))
         {
-            if (collision.gameObject.GetComponent<NoiseScript>().noiseStrength >= 1.5f) noiseStrength *= noiseMultiplier;
-            updateSize();
-        }
-        else if (collision.CompareTag("Guard"))
-        {
-            collision.gameObject.GetComponent<AI_Controller>().handleNoise(transform.position, noiseStrength);
+            collision.gameObject.GetComponent<AI_Controller>().handleNoise(transform, noiseStrength);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Noise"))
-        {
-            noiseStrength /= noiseMultiplier;
-            updateSize();
-        }
+        //if (collision.CompareTag("Noise"))
+        //{
+        //    noiseStrength /= noiseMultiplier;
+        //    updateSize();
+        //}
 
     }
 

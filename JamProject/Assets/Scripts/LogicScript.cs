@@ -102,6 +102,10 @@ public class LogicScript : MonoBehaviour
                             dialogsForTutorials[2].SetActive(false);
                             dialogsForTutorials[3].SetActive(true);
                         }
+                        foreach(GameObject agentInLoop in loopers)
+                        {
+                            agentInLoop.GetComponent<PlayerController>().updatePeopleInLoop(loopers.Count);
+                        }
                     }
                 }
             }
@@ -119,6 +123,7 @@ public class LogicScript : MonoBehaviour
                         foreach (GameObject agentInLoop in loopers)
                         {
                             setLoopPrefs(agentInLoop, false);
+                            agentInLoop.GetComponent<PlayerController>().updatePeopleInLoop(1);
                         }
                         loopers = new List<GameObject>();
 
@@ -144,6 +149,7 @@ public class LogicScript : MonoBehaviour
                     if (agentInLoop != selectedAgent)
                     {
                         setLoopPrefs(agentInLoop, false);
+                        agentInLoop.GetComponent<PlayerController>().updatePeopleInLoop(1);
                     }
                 }
                 loopers = new List<GameObject>();
@@ -235,6 +241,7 @@ public class LogicScript : MonoBehaviour
     public void setLoopPrefs(GameObject agentToUpdate, bool toggleOn) //will toggle POIs and highlights
     {
         agentToUpdate.transform.GetChild(2).gameObject.SetActive(toggleOn);
+        agentToUpdate.transform.GetChild(3).gameObject.SetActive(toggleOn);
         updatePointsOfInterest(toggleOn, agentToUpdate);
     }
 

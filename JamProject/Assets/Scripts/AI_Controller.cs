@@ -40,10 +40,25 @@ public class AI_Controller : MonoBehaviour
         {
             waitingForNextWaypoint = false;
         }
+
+        if (guardNavMeshAgent.velocity.sqrMagnitude > 0.01f)
+        {
+            waitingForNextWaypoint = false;
+        }
     }
 
-    public void handleNoise(Vector3 source, float strength)
+    public void handleNoise(Transform source, float strength)
     {
+        float panic = 0;
+        if (panic < strength / 2)
+        {
+            panic = strength / 2;
+        }
+        guardNavMeshAgent.speed = panic;
+        for (int i = 0; i < waypoints.Length + 1; i++)
+        {
+            waypoints[i] = source;
+        }
 
     }
 
