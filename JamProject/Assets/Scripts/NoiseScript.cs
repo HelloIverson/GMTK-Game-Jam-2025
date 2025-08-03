@@ -9,17 +9,17 @@ public class NoiseScript : MonoBehaviour
 
     void Start()
     {
-
+        updateSize();
     }
 
     void Update()
     {
-        
+
     }
 
     void updateSize()
     {
-        transform.localScale = new Vector3(noiseStrength * scaleFactor, transform.localScale.y, transform.localScale.z);
+        transform.gameObject.GetComponent<CircleCollider2D>().radius = noiseStrength * scaleFactor;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
