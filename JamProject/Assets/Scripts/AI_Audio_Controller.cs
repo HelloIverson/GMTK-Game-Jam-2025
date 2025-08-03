@@ -29,7 +29,8 @@ public class AI_Audio_Controller : MonoBehaviour
             {
                 //calculate volume
                 float distanceToPlayer = Vector3.Distance(transform.position, logicScript.selectedAgent.transform.position);
-                float volume = Mathf.Clamp01(1.0f - ((distanceToPlayer / fadeStrength)*(distanceToPlayer / fadeStrength)));
+                //float volume = Mathf.Clamp01(1.0f - ((distanceToPlayer / fadeStrength)*(distanceToPlayer / fadeStrength)));
+                float volume = Mathf.Clamp01(1.0f - (distanceToPlayer / fadeStrength));
                 audioSource.volume = volume;
 
                 AudioClip audioClip = footsteps[Random.Range(0, footsteps.Length)];

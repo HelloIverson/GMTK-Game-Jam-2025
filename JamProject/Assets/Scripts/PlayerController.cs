@@ -71,14 +71,34 @@ public class PlayerController : MonoBehaviour
                 if (tagsToUpdate != "Guard")
                 {
                     obj.layer = newLayer;
+                    if (newLayer == 3)
+                    {
+                        //new POI :)
+                        transform.Find("Lantern").gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        //removing POI :(
+                        transform.Find("Lantern").gameObject.SetActive(false);
+                    }
                     continue;
                 }
-                Debug.Log("checking for guards");
+                //Debug.Log("checking for guards");
                 //For Yellow (can see guards), theres a special exception that checks for the distance away
                 if (Vector3.Distance(obj.transform.position, transform.position) <= guardSightRange)
                 {
                     obj.layer = newLayer;
-                    Debug.Log("found guard");
+                    if (newLayer == 3)
+                    {
+                        //new POI :)
+                        transform.Find("Lantern").gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        //removing POI :(
+                        transform.Find("Lantern").gameObject.SetActive(false);
+                    }
+                    //Debug.Log("found guard");
                 }
             }
         }
