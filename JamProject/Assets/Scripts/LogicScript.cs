@@ -39,6 +39,7 @@ public class LogicScript : MonoBehaviour
     {
 
         agents = GameObject.FindGameObjectsWithTag("Agent");
+        guards = GameObject.FindGameObjectsWithTag("Guard");
         bool foundAgent = false;
         foreach (GameObject testAgent in agents)
         {
@@ -169,18 +170,18 @@ public class LogicScript : MonoBehaviour
         //guards chasing
         for (int i = 0; i < guards.Length; i++)
         {
-            if (guards[i].chasing == true)
+            if (guards[i].GetComponent<AI_Controller>().chasing == true)
             {
                 chaseCount++;
             }
         }
         if (chaseCount == 0)
         {
-            guards[0].suspenseMusic();
+            guards[0].GetComponent<AI_Controller>().suspenseMusic();
         }
         if (chaseCount > 0)
         {
-            guards[0].chaseMusic();
+            guards[0].GetComponent<AI_Controller>().chaseMusic();
         }
 
         chaseCount = 0;
