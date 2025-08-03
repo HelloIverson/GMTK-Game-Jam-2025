@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.42
       objectReference: {fileID: 0}
+    - target: {fileID: 4420283268538743489, guid: e5eca688a8aeb474099731907fea3766, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5231815819210634213, guid: e5eca688a8aeb474099731907fea3766, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7
@@ -13343,6 +13347,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Agent
       objectReference: {fileID: 0}
+    - target: {fileID: 5896639052926375209, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7859712143074499075, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -13481,6 +13489,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5571502091622074523, guid: e38f7eb43b70bd94e8cc205a0b6b10dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418051184981008126, guid: e38f7eb43b70bd94e8cc205a0b6b10dd, type: 3}
+      propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9220985440250820099, guid: e38f7eb43b70bd94e8cc205a0b6b10dd, type: 3}
@@ -18350,7 +18362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9039566125087928897, guid: 5a8035d53d59b3a4e94d06b6f5f9749e, type: 3}
       propertyPath: isHorizontal
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

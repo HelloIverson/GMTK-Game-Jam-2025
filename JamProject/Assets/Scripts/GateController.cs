@@ -17,6 +17,7 @@ public class GateController : MonoBehaviour
         transform.Find("gate_vertical_off_0").gameObject.SetActive(false); 
         transform.Find("gate_color_vertical_0").gameObject.SetActive(false); 
         
+        deactivate();
     }
 
     // Update is called once per frame
