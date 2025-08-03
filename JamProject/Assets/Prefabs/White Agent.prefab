@@ -284,8 +284,12 @@ MonoBehaviour:
   agent: {fileID: 5269191669310676645}
   guardSightRange: 10
   footstepSounds:
-  - {fileID: 8300000, guid: 245965889d0a183438ef3478b27122c0, type: 3}
-  stepTime: 0.2
+  - {fileID: 8300000, guid: 87d51f07abec0584d805bbe3708a7c71, type: 3}
+  - {fileID: 8300000, guid: 9f96c8d3fef6ab440bdc9bd4ad3d08fe, type: 3}
+  - {fileID: 8300000, guid: 61abfb7bb17151f458862ef823ac0932, type: 3}
+  - {fileID: 8300000, guid: 846819fd62ca22b478d33e537cd61c8c, type: 3}
+  - {fileID: 8300000, guid: 6eee7f295d5ff8b4f934dec7f44eaf97, type: 3}
+  stepTime: 0.3
 --- !u!195 &5269191669310676645
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -295,7 +299,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5281203609714440210}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -316,7 +320,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5281203609714440210}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

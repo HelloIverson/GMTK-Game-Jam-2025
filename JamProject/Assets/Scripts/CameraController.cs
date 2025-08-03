@@ -101,10 +101,12 @@ public class CameraController : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * smoothSpeedWhenZooming);
 
             //now size
-            float requiredHeightY = (topMost - bottomMost) * bufferWhenZoomedOut;
-            float requiredHeightX = (rightMost - leftMost) * bufferWhenZoomedOut * (9/16);
+            float requiredHeightY = (topMost - bottomMost) * bufferWhenZoomedOut /2f ;
+            float requiredHeightX = (rightMost - leftMost) * bufferWhenZoomedOut * 9f / 32f;
             //set the camera size to the largest of requiredHeightY, requiredHeightX, and minSize
             float requiredSize = Mathf.Max(requiredHeightY, requiredHeightX, minSize);
+            //Debug.Log(requiredSize);
+            //Debug.Log(bufferWhenZoomedOut);
             Camera.main.orthographicSize += (requiredSize - Camera.main.orthographicSize) * zoomSpeed * Time.deltaTime;
             zoomingBackIn = true;
         }

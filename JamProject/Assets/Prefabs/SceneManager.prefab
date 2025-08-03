@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd19c7a9fb3d56542b12486ee07868dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Tutorial
+  nextScene: 
   fadeOutTime: 1
   fadeInTime: 0
   blackScreen: {fileID: 0}
