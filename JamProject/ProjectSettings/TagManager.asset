@@ -9,6 +9,8 @@ TagManager:
   - Button
   - Goal
   - Guard
+  - Noise
+  - Logic
   layers:
   - Default
   - TransparentFX

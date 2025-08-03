@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour
     private AudioSource audioSource;
     private float stepTimer = 0.19f; // Timer to track when to play the next step sound
     private Vector3 lastPos;
+    private GameObject noise;
+
+    public bool isWalking;
+    public int buddies = 1;
 
     void Start()
     {
@@ -21,12 +25,15 @@ public class PlayerController : MonoBehaviour
         agent.updateUpAxis = false;
         audioSource = GetComponent<AudioSource>();
         lastPos = transform.position;
+        noise = transform.Find("Noise").gameObject;
+        isWalking = false;
     }
 
     void Update()
     {
-        if((lastPos - transform.position).magnitude > 0.001)
+        if((lastPos - transform.position).magnitude > 0.001f)
         {
+            isWalking = true;
             stepTimer += Time.deltaTime;
             if (stepTimer >= stepTime)
             {
@@ -37,9 +44,12 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            isWalking = false;
             stepTimer = 0.19f; // Reset timer if not moving
         }
+
         lastPos = transform.position;
+        updateNoiseStrength();
     }
 
     public void updateDestination()
@@ -72,5 +82,21 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void updateNoiseStrength()
+    {
+        float newNoiseStrength = (float)buddies * (isWalking ? 2 : 1); //double the noise strength if walking
+        if (noise.GetComponent<NoiseScript>().noiseStrength > newNoiseStrength && isWalking)
+        {
+            //only decrease if !isWalking
+            return;
+        }
+        noise.GetComponent<NoiseScript>().noiseStrength = newNoiseStrength;
+    }
+
+    public void updatePeopleInLoop(int peopleInLoop)
+    {
+        buddies = peopleInLoop;
     }
 }

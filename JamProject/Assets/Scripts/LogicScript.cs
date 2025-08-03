@@ -14,6 +14,10 @@ public class LogicScript : MonoBehaviour
     private AudioClip groupSound;
     [SerializeField]
     private AudioClip ungroupSound;
+    [SerializeField]
+    private bool isTutorial;
+    [SerializeField]
+    private GameObject[] dialogsForTutorials;
 
     public string defaultNameOfStartingPlayer;
 
@@ -21,7 +25,7 @@ public class LogicScript : MonoBehaviour
     public GameObject[] agents;
     public CameraController camController;
 
-    private GameObject selectedAgent;
+    public GameObject selectedAgent;
     private GameObject particles;
     private List<GameObject> loopers = new(); // all the gameObjects of agents in the loop
     private AudioSource audioSource;
@@ -68,6 +72,11 @@ public class LogicScript : MonoBehaviour
                     PlayerController selectedScript = agentInLoop.GetComponent<PlayerController>();
                     selectedScript.updateDestination();
                 }
+                if (isTutorial && dialogsForTutorials[1].activeSelf)
+                {
+                    dialogsForTutorials[1].SetActive(false);
+                    dialogsForTutorials[2].SetActive(true);
+                }
             }
 
             // indicator on
@@ -88,6 +97,15 @@ public class LogicScript : MonoBehaviour
                         loopers.Add(raycastedAgent);
                         setLoopPrefs(raycastedAgent, true);
                         audioSource.PlayOneShot(groupSound);
+                        if(isTutorial && dialogsForTutorials[2].activeSelf)
+                        {
+                            dialogsForTutorials[2].SetActive(false);
+                            dialogsForTutorials[3].SetActive(true);
+                        }
+                        foreach(GameObject agentInLoop in loopers)
+                        {
+                            agentInLoop.GetComponent<PlayerController>().updatePeopleInLoop(loopers.Count);
+                        }
                     }
                 }
             }
@@ -105,6 +123,7 @@ public class LogicScript : MonoBehaviour
                         foreach (GameObject agentInLoop in loopers)
                         {
                             setLoopPrefs(agentInLoop, false);
+                            agentInLoop.GetComponent<PlayerController>().updatePeopleInLoop(1);
                         }
                         loopers = new List<GameObject>();
 
@@ -114,6 +133,11 @@ public class LogicScript : MonoBehaviour
                     }
                     changeSelectedAgent(raycastedAgent);
                     audioSource.PlayOneShot(swapSound);
+                    if (isTutorial && dialogsForTutorials[0].activeSelf)
+                    {
+                        dialogsForTutorials[0].SetActive(false);
+                        dialogsForTutorials[1].SetActive(true);
+                    }
                 }
             }
 
@@ -125,6 +149,7 @@ public class LogicScript : MonoBehaviour
                     if (agentInLoop != selectedAgent)
                     {
                         setLoopPrefs(agentInLoop, false);
+                        agentInLoop.GetComponent<PlayerController>().updatePeopleInLoop(1);
                     }
                 }
                 loopers = new List<GameObject>();
@@ -203,6 +228,9 @@ public class LogicScript : MonoBehaviour
             case "Green Agent":
                 tagToCheck = "Guard";
                 break;
+            case "Orange Agent":
+                tagToCheck = "Button";
+                break;
             default:
                 //this agent has no POI-specific abilities
                 break;
@@ -213,6 +241,7 @@ public class LogicScript : MonoBehaviour
     public void setLoopPrefs(GameObject agentToUpdate, bool toggleOn) //will toggle POIs and highlights
     {
         agentToUpdate.transform.GetChild(2).gameObject.SetActive(toggleOn);
+        agentToUpdate.transform.GetChild(3).gameObject.SetActive(toggleOn);
         updatePointsOfInterest(toggleOn, agentToUpdate);
     }
 
