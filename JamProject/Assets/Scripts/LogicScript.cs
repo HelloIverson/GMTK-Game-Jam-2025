@@ -222,6 +222,9 @@ public class LogicScript : MonoBehaviour
             case "Green Agent":
                 tagToCheck = "Guard";
                 break;
+            case "Orange Agent":
+                tagToCheck = "Button";
+                break;
             default:
                 //this agent has no POI-specific abilities
                 break;
