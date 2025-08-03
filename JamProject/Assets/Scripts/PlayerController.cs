@@ -64,8 +64,11 @@ public class PlayerController : MonoBehaviour
     {
         GameObject[] objectsToUpdate = GameObject.FindGameObjectsWithTag(tagsToUpdate);
 
+        Debug.Log(objectsToUpdate.Length + " objects to update with tag " + tagsToUpdate);
+
         foreach (GameObject obj in objectsToUpdate)
         {
+            
             if (obj.CompareTag(tagsToUpdate))
             {
                 if (tagsToUpdate != "Guard")
@@ -74,6 +77,7 @@ public class PlayerController : MonoBehaviour
                     if (newLayer == 3)
                     {
                         //new POI :)
+                        
                         obj.transform.Find("Lantern").gameObject.SetActive(true);
                     }
                     else

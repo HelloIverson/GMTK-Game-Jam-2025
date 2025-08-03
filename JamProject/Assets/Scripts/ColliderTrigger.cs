@@ -10,7 +10,12 @@ public class TriggerEvent2D : MonoBehaviour
         //for each event
         foreach (var e in onTriggerEnter)
         {
-            e.Invoke();
+            //check if the e gameobject has tag Agent
+            if(other.gameObject.CompareTag("Agent"))
+            {
+                //if it does, invoke the event
+                e.Invoke();
+            }
         }
     }
 }

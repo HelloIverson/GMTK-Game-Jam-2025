@@ -148,6 +148,10 @@ PrefabInstance:
       value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 5231815819210634213, guid: e5eca688a8aeb474099731907fea3766, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231815819210634213, guid: e5eca688a8aeb474099731907fea3766, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.44
       objectReference: {fileID: 0}
@@ -187,9 +191,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5231815819210634213, guid: e5eca688a8aeb474099731907fea3766, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5281203609714440210, guid: e5eca688a8aeb474099731907fea3766, type: 3}
       propertyPath: m_Name
       value: White Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841322403791828451, guid: e5eca688a8aeb474099731907fea3766, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841322403791828451, guid: e5eca688a8aeb474099731907fea3766, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841322403791828451, guid: e5eca688a8aeb474099731907fea3766, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5.6000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841322403791828451, guid: e5eca688a8aeb474099731907fea3766, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4403410514904137592, guid: e5eca688a8aeb474099731907fea3766, type: 3}
@@ -436,7 +460,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -5.139809, y: 1.4464335}
+  m_Offset: {x: -5.139809, y: 0.88767576}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -446,7 +470,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.1814394, y: 2.3691425}
+  m_Size: {x: 2.1814394, y: 0.74988556}
   m_EdgeRadius: 0
 --- !u!4 &102773712
 Transform:
@@ -717,12 +741,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1402687811}
     - target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
+      propertyPath: selectedAgent
+      value: 
+      objectReference: {fileID: 53210491}
+    - target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
       propertyPath: particleSystem
       value: 
       objectReference: {fileID: 5848398215301021368, guid: 53b33f88927607d4cb5830db160f2ca6, type: 3}
     - target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
       propertyPath: agents.Array.size
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
+      propertyPath: guards.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
       propertyPath: 'agents.Array.data[0]'
@@ -735,7 +767,11 @@ PrefabInstance:
     - target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
       propertyPath: 'agents.Array.data[2]'
       value: 
-      objectReference: {fileID: 1436680326}
+      objectReference: {fileID: 662638377}
+    - target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
+      propertyPath: 'guards.Array.data[0]'
+      value: 
+      objectReference: {fileID: 798510806}
     - target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
       propertyPath: defaultNameOfStartingPlayer
       value: White Agent
@@ -750,6 +786,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1058530633803062697, guid: e38f7eb43b70bd94e8cc205a0b6b10dd, type: 3}
   m_PrefabInstance: {fileID: 1645866247}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &798510806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3441751972719008664, guid: 718575f703d743548a2260edaa995524, type: 3}
+  m_PrefabInstance: {fileID: 1067333613}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &975519327 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
+  m_PrefabInstance: {fileID: 2144472094}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd19c7a9fb3d56542b12486ee07868dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1067333613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -823,17 +875,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goal (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 543981762465041512, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 825959028686085654, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 825959028686085654, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.548306
+      value: -16.71
       objectReference: {fileID: 0}
     - target: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.24
+      value: 6.11
       objectReference: {fileID: 0}
     - target: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
       propertyPath: m_LocalPosition.z
@@ -887,6 +947,10 @@ PrefabInstance:
       propertyPath: 'agents.Array.data[2]'
       value: 
       objectReference: {fileID: 53210491}
+    - target: {fileID: 8314915785824120490, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12919,7 +12983,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPlayer: {fileID: 53210498}
-  potentialPointsOfInterest: []
+  potentialPointsOfInterest:
+  - {fileID: 1921453290}
   minSize: 3
   moveOffset: 0
   zoomSpeed: 1
@@ -12935,6 +13000,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 582209673669563199, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 845739238756764143, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -12991,9 +13060,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4454028785407393808, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4537382244213766897, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
       propertyPath: m_Name
       value: Red Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859712143074499075, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859712143074499075, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859712143074499075, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.5000002
       objectReference: {fileID: 0}
     - target: {fileID: 8876544917637426131, guid: f2f3bca830bd1d84bbc2e9dab78647d3, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
@@ -13079,13 +13164,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Agent
       objectReference: {fileID: 0}
+    - target: {fileID: 5234573732376407425, guid: e38f7eb43b70bd94e8cc205a0b6b10dd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5571502091622074523, guid: e38f7eb43b70bd94e8cc205a0b6b10dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.000808
+      value: -11.79
       objectReference: {fileID: 0}
     - target: {fileID: 5571502091622074523, guid: e38f7eb43b70bd94e8cc205a0b6b10dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.46
+      value: 6.25
       objectReference: {fileID: 0}
     - target: {fileID: 5571502091622074523, guid: e38f7eb43b70bd94e8cc205a0b6b10dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13257,6 +13346,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1921453290 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+  m_PrefabInstance: {fileID: 1356768083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2032192425
 GameObject:
   m_ObjectHideFlags: 0
@@ -17976,6 +18070,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a8035d53d59b3a4e94d06b6f5f9749e, type: 3}
+--- !u!114 &2137084454 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
+  m_PrefabInstance: {fileID: 572695519}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9218e91fde4c5419a5ebea7dddc937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2144472094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18287,8 +18392,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 590, y: -209}
-  m_SizeDelta: {x: 102.16058, y: 30}
+  m_AnchoredPosition: {x: 9.8, y: 0.0355}
+  m_SizeDelta: {x: 67.1639, y: 16.929}
   m_Pivot: {x: 0.000000040978193, y: 0.5}
 --- !u!1 &91297870843665856
 GameObject:
@@ -19217,7 +19322,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
+      - m_Target: {fileID: 2137084454}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
         m_MethodName: toggleUI
         m_Mode: 6
@@ -19229,7 +19334,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
+      - m_Target: {fileID: 975519327}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: restart
         m_Mode: 1
@@ -20155,9 +20260,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1681978555648638002}
-        m_TargetAssemblyTypeName: TypeScript, Assembly-CSharp
-        m_MethodName: nextMessage
+      - m_Target: {fileID: 8652294422165133034}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20167,7 +20272,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
+      - m_Target: {fileID: 975519327}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: stopTime
         m_Mode: 1
@@ -20194,18 +20299,6 @@ MonoBehaviour:
       - m_Target: {fileID: 7048455971969620310}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
-        m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
-        m_MethodName: toggleUI
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21124,7 +21217,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
+      - m_Target: {fileID: 2137084454}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
         m_MethodName: toggleUI
         m_Mode: 6
@@ -21136,7 +21229,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
+      - m_Target: {fileID: 975519327}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: SetVolumeSliders
         m_Mode: 1
@@ -21223,18 +21316,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1681978555648638002}
-        m_TargetAssemblyTypeName: TypeScript, Assembly-CSharp
-        m_MethodName: nextMessage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 91297870843665856}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -21247,7 +21328,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
+      - m_Target: {fileID: 975519327}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: resumeTime
         m_Mode: 1
@@ -21271,7 +21352,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8362118562858739350, guid: 23c3a47d55007114887df575560838d5, type: 3}
+      - m_Target: {fileID: 2137084454}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
         m_MethodName: toggleUI
         m_Mode: 6
@@ -22216,7 +22297,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.616028, y: 1.9124756}
+  m_AnchoredPosition: {x: 4.615967, y: 1.9124756}
   m_SizeDelta: {x: 50.7766, y: 30.0266}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &5279364324507409013
@@ -23120,9 +23201,10 @@ MonoBehaviour:
   - 'AGENT BLUE: Commander, I can keep track of the coords and specialties of all
     the rebels. The others have specialties too, and it''s your job to keep us in
     the loop. '
-  - 'AGENT RED: Commander, if you press V you can switch between perspectives of
-    everyone in the loop, and if you press C you can clear the loop and go back to
-    moving us one at a time. '
+  - 'AGENT BLUE: You can use the mouse wheel to zoom, letting you see the information
+    each us can offer. '
+  - 'AGENT RED: Commander, if you press C you can clear the loop you made with X
+    and go back to moving us one at a time. '
   - 'AGENT RED: And be careful! We make a lot of noise as a group.'
   textDelay: 0.03
   frontDelay: 0
@@ -23243,7 +23325,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2137084454}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
         m_MethodName: toggleUI
         m_Mode: 6
@@ -23271,42 +23353,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: TypeScript, Assembly-CSharp
         m_MethodName: nextMessage
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TypeScript, Assembly-CSharp
-        m_MethodName: nextMessage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TypeScript, Assembly-CSharp
-        m_MethodName: nextMessage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23828,7 +23874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 6.590515, y: 209.56668}
+  m_AnchoredPosition: {x: 6.590576, y: 209.56668}
   m_SizeDelta: {x: 79.3514, y: 25.5915}
   m_Pivot: {x: 0.000000040978193, y: 0.5}
 --- !u!222 &7249149352856257230
@@ -24145,7 +24191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 6.590515, y: 209.56668}
+  m_AnchoredPosition: {x: 6.590576, y: 209.56668}
   m_SizeDelta: {x: 83.4125, y: 25.5915}
   m_Pivot: {x: 0.000000040978193, y: 0.5}
 --- !u!82 &7585266259175219633
@@ -24604,7 +24650,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
+      - m_Target: {fileID: 975519327}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: ChangeMasterVolume
         m_Mode: 0
@@ -24891,19 +24937,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
-        m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
-        m_MethodName: ToSuspenseMusic
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3721715350263565458, guid: a82570eb1df4fff4baa3b3202bba9b5f, type: 3}
+      - m_Target: {fileID: 975519327}
         m_TargetAssemblyTypeName: SceneExecutive, Assembly-CSharp
         m_MethodName: LoadNextScene
         m_Mode: 1
@@ -25187,7 +25221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - 'Tutorial Complete! '
+  - Level Complete!
   textDelay: 0.03
   frontDelay: 0
   isDialog: 0

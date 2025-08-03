@@ -149,11 +149,15 @@ public class LogicScript : MonoBehaviour
             // clear
             if (Input.GetKeyDown(KeyCode.C)) // c key released
             {
-                foreach (GameObject agentInLoop in loopers)
+                foreach (GameObject agentInLoop in agents)
                 {
                     if (agentInLoop != selectedAgent)
                     {
                         setLoopPrefs(agentInLoop, false);
+                        if(selectedAgent.name != "Blue Agent")
+                        {
+                            agentInLoop.transform.Find("Lantern").gameObject.SetActive(false);
+                        }
                         agentInLoop.GetComponent<PlayerController>().updatePeopleInLoop(1);
                     }
                 }
@@ -228,9 +232,15 @@ public class LogicScript : MonoBehaviour
     public void changeSelectedAgent(GameObject newObject)
     {
             //selectedagent
+        //if name of newObject is not Blue Agent
+        if(newObject.name != "Blue Agent")
+        {
+            selectedAgent.transform.Find("Lantern").gameObject.SetActive(false);
+        }
         selectedAgent = newObject;
+        selectedAgent.transform.Find("Lantern").gameObject.SetActive(true);
 
-            //camera
+        //camera
         camController.currentPlayer = newObject.transform;
 
             //particles
@@ -269,6 +279,10 @@ public class LogicScript : MonoBehaviour
 
     public void setLoopPrefs(GameObject agentToUpdate, bool toggleOn) //will toggle POIs and highlights
     {
+        //if(selectedAgent.name != "Blue Agent")
+        //{
+            agentToUpdate.transform.GetChild(0).gameObject.SetActive(toggleOn); //lanter
+        //}
         agentToUpdate.transform.GetChild(2).gameObject.SetActive(toggleOn);
         agentToUpdate.transform.GetChild(3).gameObject.SetActive(toggleOn);
         updatePointsOfInterest(toggleOn, agentToUpdate);

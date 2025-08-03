@@ -4770,13 +4770,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPlayer: {fileID: 53210498}
-  potentialPointsOfInterest: []
+  potentialPointsOfInterest:
+  - {fileID: 1841828678}
   minSize: 3
   moveOffset: 0
   zoomSpeed: 10
   smoothSpeed: 5
   smoothSpeedWhenZooming: 2
   bufferWhenZoomedOut: 1.5
+  scrollWheel: 0
 --- !u!1001 &1436680325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4990,6 +4992,11 @@ Transform:
   - {fileID: 1390694918}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1841828678 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4454380506510632032, guid: 25c1689129c1d9040910a8bd9a2f9232, type: 3}
+  m_PrefabInstance: {fileID: 4610786817304113611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1886509491
 GameObject:
   m_ObjectHideFlags: 0
