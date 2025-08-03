@@ -5,9 +5,6 @@ EditorUserSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 4
   m_ConfigSettings:
-    GraphicsSettingsInspector_UserSettings:
-      value: 18134705175a055722080a3115371d4a0d55006876786860616b0471b8b07a68ffab74f9ee2a3a30300cea1a11320d0beb1a0c25f7060f494b4cc80018eb09361fc211cb1f862d19c51d19dcc413d6ade0d8ddfcddf9f4d9d29195fcfde6ebeae6f0a9c9afa6f8c5b89ff7a1aacececac4eba4d7c9d28bda
-      flags: 0
     RecentlyUsedSceneGuid-0:
       value: 515004005d015159595f0e7540205c444115407d7879236128701963e3b0356f
       flags: 0
@@ -15,7 +12,7 @@ EditorUserSettings:
       value: 515004005d015159595f0e7540205c444115407d7879236128701963e3b0356f
       flags: 0
     RecentlyUsedSceneGuid-2:
-      value: 5b520d0503545b0d0c0c0a2715770748154f4d2c7d7d7e627a7d4a35b4e1646a
+      value: 0253045e0050500d5d08592116265a441016497f2f2a27332f7f4835e1b3623a
       flags: 0
     RecentlyUsedSceneGuid-3:
       value: 5b520d0503545b0d0c0c0a2715770748154f4d2c7d7d7e627a7d4a35b4e1646a
@@ -24,9 +21,15 @@ EditorUserSettings:
       value: 5b50025e045351025f0d557a1277064446164b78747076327f701e36b1b43239
       flags: 0
     RecentlyUsedSceneGuid-5:
-      value: 570805025c510a59555a0a7a16720844154e497a7d7e24612b7c4b64b6e1676d
+      value: 5255055655500b59595a087b15740c44124f1c2b2e2d27647d7d4a35b4b4353e
       flags: 0
     RecentlyUsedSceneGuid-6:
+      value: 5b50025e045351025f0d557a1277064446164b78747076327f701e36b1b43239
+      flags: 0
+    RecentlyUsedSceneGuid-7:
+      value: 5b50025e045351025f0d557a1277064446164b78747076327f701e36b1b43239
+      flags: 0
+    RecentlyUsedSceneGuid-8:
       value: 5157560500540c0c0908552149225a44464f1d7f2e7f716774281f32bab03061
       flags: 0
     RecentlyUsedSceneGuid-7:
@@ -36,7 +39,7 @@ EditorUserSettings:
       value: 5255055655500b59595a087b15740c44124f1c2b2e2d27647d7d4a35b4b4353e
       flags: 0
     RecentlyUsedSceneGuid-9:
-      value: 0253045e0050500d5d08592116265a441016497f2f2a27332f7f4835e1b3623a
+      value: 570805025c510a59555a0a7a16720844154e497a7d7e24612b7c4b64b6e1676d
       flags: 0
     lightmappingBakingProfile:
       value: 51
