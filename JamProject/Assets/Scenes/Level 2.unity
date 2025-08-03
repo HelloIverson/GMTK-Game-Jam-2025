@@ -313,9 +313,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3518862618622519199, guid: dcac22390b0a1384bb160a490da98e10, type: 3}
+      propertyPath: m_TileSize
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518862618622519199, guid: dcac22390b0a1384bb160a490da98e10, type: 3}
+      propertyPath: m_VoxelSize
+      value: 0.16666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518862618622519199, guid: dcac22390b0a1384bb160a490da98e10, type: 3}
+      propertyPath: m_DefaultArea
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518862618622519199, guid: dcac22390b0a1384bb160a490da98e10, type: 3}
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: 00f414712c5cb6542b67e2f33d4231a1, type: 2}
+    - target: {fileID: 3518862618622519199, guid: dcac22390b0a1384bb160a490da98e10, type: 3}
+      propertyPath: m_UseGeometry
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518862618622519199, guid: dcac22390b0a1384bb160a490da98e10, type: 3}
+      propertyPath: m_CollectObjects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518862618622519199, guid: dcac22390b0a1384bb160a490da98e10, type: 3}
+      propertyPath: m_OverrideTileSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518862618622519199, guid: dcac22390b0a1384bb160a490da98e10, type: 3}
+      propertyPath: m_OverrideVoxelSize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3880857659931828066, guid: dcac22390b0a1384bb160a490da98e10, type: 3}
       propertyPath: m_Name
       value: Navmesh
