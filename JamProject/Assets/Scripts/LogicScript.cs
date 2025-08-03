@@ -25,7 +25,7 @@ public class LogicScript : MonoBehaviour
     public GameObject[] agents;
     public CameraController camController;
 
-    private GameObject selectedAgent;
+    public GameObject selectedAgent;
     private GameObject particles;
     private List<GameObject> loopers = new(); // all the gameObjects of agents in the loop
     private AudioSource audioSource;

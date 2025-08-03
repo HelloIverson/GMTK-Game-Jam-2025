@@ -635,6 +635,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 846819fd62ca22b478d33e537cd61c8c, type: 3}
   - {fileID: 8300000, guid: 6eee7f295d5ff8b4f934dec7f44eaf97, type: 3}
   stepTime: 0.3
+  isWalking: 0
 --- !u!212 &184136975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5445,6 +5446,8 @@ MonoBehaviour:
   swapSound: {fileID: 8300000, guid: b2d5d7e57895b2745b155d240ed5a5a5, type: 3}
   groupSound: {fileID: 8300000, guid: f10e7ff812627164fa39911459400577, type: 3}
   ungroupSound: {fileID: 8300000, guid: 2ec14d07946c7fe429f08fc058e5b2f8, type: 3}
+  isTutorial: 0
+  dialogsForTutorials: []
   defaultNameOfStartingPlayer: White Agent
   maxSwapDistance: 4
   agents: []
@@ -6358,6 +6361,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 846819fd62ca22b478d33e537cd61c8c, type: 3}
   - {fileID: 8300000, guid: 6eee7f295d5ff8b4f934dec7f44eaf97, type: 3}
   stepTime: 0.5
+  isWalking: 0
 --- !u!212 &1515812975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8961,6 +8965,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 846819fd62ca22b478d33e537cd61c8c, type: 3}
   - {fileID: 8300000, guid: 6eee7f295d5ff8b4f934dec7f44eaf97, type: 3}
   stepTime: 0.4
+  isWalking: 0
 --- !u!212 &1559341478
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9253,6 +9258,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 846819fd62ca22b478d33e537cd61c8c, type: 3}
   - {fileID: 8300000, guid: 6eee7f295d5ff8b4f934dec7f44eaf97, type: 3}
   stepTime: 0.6
+  isWalking: 0
 --- !u!195 &1586341594
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9623,6 +9629,7 @@ GameObject:
   - component: {fileID: 1688880363}
   - component: {fileID: 1688880367}
   - component: {fileID: 1688880366}
+  - component: {fileID: 1688880368}
   m_Layer: 0
   m_Name: Guard1
   m_TagString: Guard
@@ -9785,6 +9792,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1688880368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688880362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c76bcbdf6364ea45b3d4f36c7ee6272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1705684863
 GameObject:
   m_ObjectHideFlags: 0
@@ -10002,6 +10021,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 846819fd62ca22b478d33e537cd61c8c, type: 3}
   - {fileID: 8300000, guid: 6eee7f295d5ff8b4f934dec7f44eaf97, type: 3}
   stepTime: 0.4
+  isWalking: 0
 --- !u!212 &1756994334
 SpriteRenderer:
   m_ObjectHideFlags: 0
