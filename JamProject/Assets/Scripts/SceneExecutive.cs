@@ -25,7 +25,9 @@ public class SceneExecutive : MonoBehaviour
     void Awake() {
         if (AudioManager.instance != null) {
             audioManager = AudioManager.instance.gameObject;
+            Debug.Log("created audio manager");
         }
+        Debug.Log(audioManager ? true : false);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

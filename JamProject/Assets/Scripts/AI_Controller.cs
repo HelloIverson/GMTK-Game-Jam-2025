@@ -20,6 +20,7 @@ public class AI_Controller : MonoBehaviour
         guardNavMeshAgent.updateRotation = false;
         guardNavMeshAgent.updateUpAxis = false;
         guardNavMeshAgent = GetComponent<NavMeshAgent>();
+        sceneManager = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<SceneExecutive>();
         // set the initial destination to the first waypoint
         if (waypoints.Length > 0)
         {

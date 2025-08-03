@@ -34,6 +34,8 @@ public class LogicScript : MonoBehaviour
 
     public GameObject particleSystem;
     public bool inUI = false;
+    public bool chaseMusic = false;
+    public bool oldChaseMusic = true;
 
     void Start()
     {
@@ -179,13 +181,15 @@ public class LogicScript : MonoBehaviour
             }
             if (chaseCount == 0)
             {
-                guards[0].GetComponent<AI_Controller>().suspenseMusic();
+                chaseMusic = false;
+                if (chaseMusic != oldChaseMusic) guards[0].GetComponent<AI_Controller>().suspenseMusic();
             }
             if (chaseCount > 0)
             {
-                guards[0].GetComponent<AI_Controller>().chaseMusic();
+                chaseMusic = true;
+                if (chaseMusic != oldChaseMusic) guards[0].GetComponent<AI_Controller>().chaseMusic();
             }
-
+            oldChaseMusic = chaseMusic;
             chaseCount = 0;
         }
     }

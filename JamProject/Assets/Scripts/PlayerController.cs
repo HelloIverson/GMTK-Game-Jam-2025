@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
                     else
                     {
                         //removing POI :(
-                        transform.Find("Lantern").gameObject.SetActive(false);
+                        if (!transform.CompareTag("Agent")) transform.Find("Lantern").gameObject.SetActive(false);
                     }
                     continue;
                 }
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
                     else
                     {
                         //removing POI :(
-                        transform.Find("Lantern").gameObject.SetActive(false);
+                        if (!transform.CompareTag("Agent")) transform.Find("Lantern").gameObject.SetActive(false);
                     }
                     //Debug.Log("found guard");
                 }
