@@ -1,15 +1,18 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AI_Controller : MonoBehaviour
 {
     public Transform[] waypoints; // Array to hold your target points
-    public UnityEngine.AI.NavMeshAgent guardNavMeshAgent;
+    public NavMeshAgent guardNavMeshAgent;
     private int currentWaypointIndex = 0;
     public SceneExecutive sceneManager;
 
     void Start()
     {
-        guardNavMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        guardNavMeshAgent.updateRotation = false;
+        guardNavMeshAgent.updateUpAxis = false;
+        guardNavMeshAgent = GetComponent<NavMeshAgent>();
         // set the initial destination to the first waypoint
         if (waypoints.Length > 0)
         {

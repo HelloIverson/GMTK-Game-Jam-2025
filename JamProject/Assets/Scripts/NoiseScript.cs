@@ -4,8 +4,8 @@ public class NoiseScript : MonoBehaviour
 {
     public float scaleFactor; //ratio of collider size to volume
     public float noiseMultiplier; //how much two sounds will compound eachother
-
-    public float noiseStrength = 0;
+    public float minSize = 0.75f;
+    public float noiseStrength = 0f;
 
     void Start()
     {
@@ -19,7 +19,13 @@ public class NoiseScript : MonoBehaviour
 
     void updateSize()
     {
-        transform.gameObject.GetComponent<CircleCollider2D>().radius = noiseStrength * scaleFactor;
+        if (noiseStrength * scaleFactor < minSize) { 
+            transform.gameObject.GetComponent<CircleCollider2D>().radius = noiseStrength * scaleFactor;
+        } 
+        else
+        {
+            transform.gameObject.GetComponent<CircleCollider2D>().radius = minSize;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
